@@ -1,0 +1,11 @@
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.deps.json
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.dll
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.pdb
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.AssemblyInfoInputs.cache
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.AssemblyInfo.cs
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.csproj.CoreCompileInputs.cache
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.dll
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\obj\Debug\net8.0\refint\EnglishCenterManagement.Models.dll
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.pdb
+D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement\EnglishCenterManagement.Models\obj\Debug\net8.0\ref\EnglishCenterManagement.Models.dll
