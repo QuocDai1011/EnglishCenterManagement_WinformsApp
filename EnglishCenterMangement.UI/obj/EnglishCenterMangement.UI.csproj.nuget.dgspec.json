@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj": {}
+    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
+    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj",
+        "projectUniqueName": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj",
         "projectName": "EnglishCenterManagement.Models",
-        "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj",
+        "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterManagement.Models\\obj\\",
+        "outputPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.20, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -69,14 +85,14 @@
         }
       }
     },
-    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj": {
+    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj",
+        "projectUniqueName": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj",
         "projectName": "EnglishCenterMangement.UI",
-        "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj",
+        "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterMangement.UI\\obj\\",
+        "outputPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +113,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
-                "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj"
+              "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
+                "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj"
               }
             }
           }
@@ -118,6 +134,30 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
