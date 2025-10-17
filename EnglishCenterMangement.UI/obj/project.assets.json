@@ -2,6 +2,46 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
+      "FontAwesome/4.7.0": {
+        "type": "package"
+      },
+      "FontAwesome.Sharp/6.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
+      "MaterialSkin/0.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/MaterialSkin.dll": {}
+        },
+        "runtime": {
+          "lib/MaterialSkin.dll": {}
+        }
+      },
+      "ReaLTaiizor/3.8.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/ReaLTaiizor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/ReaLTaiizor.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "EnglishCenterManagement.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -15,6 +55,86 @@
     }
   },
   "libraries": {
+    "FontAwesome/4.7.0": {
+      "sha512": "n4H/brfszElyoZ4kmGh8E75uqvLzLvFr3h2PFVdPH1LwUmWIpeqdaW2pcC4oZAhg7sESyObh0IZpAI8COCNeUg==",
+      "type": "package",
+      "path": "fontawesome/4.7.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Content/font-awesome.css",
+        "Content/Content/font-awesome.min.css",
+        "Content/fonts/FontAwesome.otf",
+        "Content/fonts/fontawesome-webfont.eot",
+        "Content/fonts/fontawesome-webfont.svg",
+        "Content/fonts/fontawesome-webfont.ttf",
+        "Content/fonts/fontawesome-webfont.woff",
+        "Content/fonts/fontawesome-webfont.woff2",
+        "fontawesome.4.7.0.nupkg.sha512",
+        "fontawesome.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "FontAwesome.Sharp/6.6.0": {
+      "sha512": "bJCb2x73UC1nD9+9iMLaUy6Ujf9Pf+buL6FHwVnaoDYT4CQNLazz59hO5gQ0+SMSW0G+ZXmjjShOYr3Jn2UZiw==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.6.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/net7.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/net8.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
+      ]
+    },
+    "MaterialSkin/0.2.1": {
+      "sha512": "/6AEh6qIeNKbxsha7IHBb5s50tyvB0iZuGQPB9mjyR+mRdfQ7vnKTklwI26Y/DbrymTcg+aBHSgCgAT7/qLIrQ==",
+      "type": "package",
+      "path": "materialskin/0.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MaterialSkin.dll",
+        "materialskin.0.2.1.nupkg.sha512",
+        "materialskin.nuspec"
+      ]
+    },
+    "ReaLTaiizor/3.8.1.3": {
+      "sha512": "ZIIXX5Elr/+Z+LDHviUQGQa3O3Ah2oDIIaYKwm5gpAHcxGWsjIsidsXQBWU1c8mrZHx3JmHr8SS4hmf9Ohpm6w==",
+      "type": "package",
+      "path": "realtaiizor/3.8.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.MD",
+        "Taiizor.png",
+        "lib/net10.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net10.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net48/ReaLTaiizor.dll",
+        "lib/net48/ReaLTaiizor.xml",
+        "lib/net481/ReaLTaiizor.dll",
+        "lib/net481/ReaLTaiizor.xml",
+        "lib/net6.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net6.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net7.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net7.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net8.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net8.0-windows7.0/ReaLTaiizor.xml",
+        "lib/net9.0-windows7.0/ReaLTaiizor.dll",
+        "lib/net9.0-windows7.0/ReaLTaiizor.xml",
+        "lib/netcoreapp3.1/ReaLTaiizor.dll",
+        "lib/netcoreapp3.1/ReaLTaiizor.xml",
+        "realtaiizor.3.8.1.3.nupkg.sha512",
+        "realtaiizor.nuspec"
+      ]
+    },
     "EnglishCenterManagement.Models/1.0.0": {
       "type": "project",
       "path": "../EnglishCenterManagement.Models/EnglishCenterManagement.Models.csproj",
@@ -23,27 +143,31 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "EnglishCenterManagement.Models >= 1.0.0"
+      "EnglishCenterManagement.Models >= 1.0.0",
+      "FontAwesome >= 4.7.0",
+      "FontAwesome.Sharp >= 6.6.0",
+      "MaterialSkin >= 0.2.1",
+      "ReaLTaiizor >= 3.8.1.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+    "C:\\Users\\lerua\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj",
+      "projectUniqueName": "C:\\Users\\lerua\\Coding\\C#\\Bài tập lớn\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj",
       "projectName": "EnglishCenterMangement.UI",
-      "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterMangement.UI\\obj\\",
+      "projectPath": "C:\\Users\\lerua\\Coding\\C#\\Bài tập lớn\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterMangement.UI.csproj",
+      "packagesPath": "C:\\Users\\lerua\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lerua\\Coding\\C#\\Bài tập lớn\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lerua\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -52,14 +176,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
-              "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj"
+            "C:\\Users\\lerua\\Coding\\C#\\Bài tập lớn\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
+              "projectPath": "C:\\Users\\lerua\\Coding\\C#\\Bài tập lớn\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj"
             }
           }
         }
@@ -79,6 +204,24 @@
     "frameworks": {
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "FontAwesome": {
+            "target": "Package",
+            "version": "[4.7.0, )"
+          },
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[6.6.0, )"
+          },
+          "MaterialSkin": {
+            "target": "Package",
+            "version": "[0.2.1, )"
+          },
+          "ReaLTaiizor": {
+            "target": "Package",
+            "version": "[3.8.1.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -98,8 +241,20 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MaterialSkin 0.2.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MaterialSkin",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }
