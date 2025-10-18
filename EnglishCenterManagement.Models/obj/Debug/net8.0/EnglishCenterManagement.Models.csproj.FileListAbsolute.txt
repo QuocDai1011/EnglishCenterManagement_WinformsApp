@@ -24,3 +24,18 @@ D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCenterMana
 D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.pdb
 D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.genruntimeconfig.cache
 D:\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\ref\EnglishCenterManagement.Models.dll
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.deps.json
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.runtimeconfig.json
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.dll
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.pdb
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.csproj.AssemblyReference.cache
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.AssemblyInfoInputs.cache
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.AssemblyInfo.cs
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.csproj.CoreCompileInputs.cache
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.sourcelink.json
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.dll
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\refint\EnglishCenterManagement.Models.dll
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.pdb
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.genruntimeconfig.cache
+C:\Users\Khanh Ha\OneDrive\Tài liệu\Workspace\WorkSpace\LTTQ\BTL\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\ref\EnglishCenterManagement.Models.dll

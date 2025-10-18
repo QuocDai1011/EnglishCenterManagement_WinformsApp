@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterManagement.UI.csproj": {}
+    "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterManagement.UI.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
+    "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj",
         "projectName": "EnglishCenterManagement.Models",
-        "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\obj\\",
+        "projectPath": "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj",
+        "packagesPath": "C:\\Users\\Khanh Ha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khanh Ha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -76,29 +76,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterManagement.UI.csproj": {
+    "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterManagement.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterManagement.UI.csproj",
+        "projectUniqueName": "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterManagement.UI.csproj",
         "projectName": "EnglishCenterManagement.UI",
-        "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterManagement.UI.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\obj\\",
+        "projectPath": "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\EnglishCenterManagement.UI.csproj",
+        "packagesPath": "C:\\Users\\Khanh Ha\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterMangement.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khanh Ha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -113,8 +127,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
-                "projectPath": "D:\\Coding\\CSharp\\BaiTapLon\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj"
+              "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj": {
+                "projectPath": "C:\\Users\\Khanh Ha\\OneDrive\\Tài liệu\\Workspace\\WorkSpace\\LTTQ\\BTL\\EnglishCenterManagement_WinformsApp\\EnglishCenterManagement.Models\\EnglishCenterManagement.Models.csproj"
               }
             }
           }
@@ -135,6 +149,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.20, )"
@@ -169,6 +187,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -177,7 +213,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
