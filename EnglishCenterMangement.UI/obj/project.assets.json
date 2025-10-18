@@ -1624,6 +1624,10 @@
       "EnglishCenterManagement.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.20",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.20"
+        },
         "compile": {
           "bin/placeholder/EnglishCenterManagement.Models.dll": {}
         },
