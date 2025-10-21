@@ -22,8 +22,10 @@ C:\Users\lerua\Source\Repos\EnglishCenterManagement_WinformsApp\EnglishCenterMan
 C:\Users\lerua\Source\Repos\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.pdb
 C:\Users\lerua\Source\Repos\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\ref\EnglishCenterManagement.Models.dll
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.deps.json
+C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.runtimeconfig.json
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.dll
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\bin\Debug\net8.0\EnglishCenterManagement.Models.pdb
+C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.csproj.AssemblyReference.cache
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.AssemblyInfoInputs.cache
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.AssemblyInfo.cs
@@ -32,4 +34,5 @@ C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\En
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.dll
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\refint\EnglishCenterManagement.Models.dll
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.pdb
+C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\EnglishCenterManagement.Models.genruntimeconfig.cache
 C:\Users\lerua\Coding\C#\Bài tập lớn\EnglishCenterManagement_WinformsApp\EnglishCenterManagement.Models\obj\Debug\net8.0\ref\EnglishCenterManagement.Models.dll

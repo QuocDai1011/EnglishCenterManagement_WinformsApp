@@ -1,4 +1,7 @@
+﻿using EnglishCenterManagement.Models.Entities;
 using EnglishCenterMangement.UI.Views;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace EnglishCenterMangement.UI
 {
@@ -10,8 +13,33 @@ namespace EnglishCenterMangement.UI
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            // Đọc file appsettings.json
+            var config = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+
+            // Lấy chuỗi kết nối
+            string connectionString = config.GetConnectionString("EnglishCenterDb");
+
+            // Tạo DbContextOptions
+            var optionsBuilder = new DbContextOptionsBuilder<EnglishCenterDbContext>();
+            optionsBuilder.UseSqlServer(connectionString);
+
+            // (Tuỳ chọn) kiểm tra kết nối
+            using (var context = new EnglishCenterDbContext(optionsBuilder.Options))
+            {
+                if (context.Database.CanConnect())
+                {
+                    Console.WriteLine("✅ Kết nối cơ sở dữ liệu thành công!");
+                }
+                else
+                {
+                    Console.WriteLine("❌ Kết nối cơ sở dữ liệu thất bại!");
+                }
+            }
+
+            // Khởi chạy ứng dụng WinForms
             ApplicationConfiguration.Initialize();
             Application.Run(new AdminView());
         }
