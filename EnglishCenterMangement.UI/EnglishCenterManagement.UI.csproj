@@ -15,6 +15,10 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\SystemAcess\" />
+    <Folder Include="Views\Teacher\" />
+    <Folder Include="Views\Student\" />
   </ItemGroup>
 
   <ItemGroup>
