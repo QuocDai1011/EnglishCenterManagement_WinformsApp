@@ -17,7 +17,7 @@ namespace EnglishCenterManagement.Models.Entities
 
         // Các DbSet tương ứng với entity
         DbSet<Admin> Admins { get; set; }
-        DbSet<Class> Classes { get; set; }
+        public DbSet<Class> Classes { get; set; }
         DbSet<ClassCourse> ClassCourses { get; set; }
         DbSet<CommuneDistrict> CommuneDistricts { get; set; }
         DbSet<Course> Courses { get; set; }

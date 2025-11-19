@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.DependencyInjection;
 using EnglishCenterManagement.UI.Views;
 using EnglishCenterManagement.Models.Entities;
+using EnglishCenterManagement.UI.Views.Student;
 
 
 namespace EnglishCenterManagement.UI
@@ -48,7 +49,7 @@ namespace EnglishCenterManagement.UI
 
             // Khởi chạy ứng dụng WinForms
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Application.Run(new Views.Student.teacherForm());
         }
     }
 }
