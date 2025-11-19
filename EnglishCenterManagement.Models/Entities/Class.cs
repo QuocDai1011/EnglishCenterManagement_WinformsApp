@@ -15,6 +15,8 @@ namespace EnglishCenterManagement.Models.Entities
         public int CurrentStudent { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+        public string pathImage { get; set; } = string.Empty;
         public int Shift { get; set; }
         public bool Status { get; set; }
         public string? Note { get; set; }

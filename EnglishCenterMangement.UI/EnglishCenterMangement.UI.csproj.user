@@ -4,14 +4,29 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UIHelper\RoundedButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="UIHelper\RoundedTextBox.cs">
+    <Compile Update="Views\Admin\Components\Header\HeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Views\AdminView.cs">
+    <Compile Update="Views\Admin\Components\Sidebar\SidebarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Pages\Base\BasePagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Pages\Classes\ClassesPagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Pages\Classes\StudentOfClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Pages\Dashboard\DashboardPagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Pages\Home\HomeForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Admin\Pages\Manage\ManagePagePanel.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>

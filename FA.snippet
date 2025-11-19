@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>FontAwesome IconPictureBox</Title>
+    <Shortcut>fa</Shortcut>
+    <Description>Insert a FontAwesome IconPictureBox quickly</Description>
+    <Author>YourName</Author>
+    <SnippetType>Expansion</SnippetType>
+  </Header>
+
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>name</ID>
+        <ToolTip>Name of the variable</ToolTip>
+        <Default>icon</Default>
+      </Literal>
+
+      <Literal>
+        <ID>iconchar</ID>
+        <ToolTip>FontAwesome IconChar</ToolTip>
+        <Default>Bell</Default>
+      </Literal>
+    </Declarations>
+
+    <Code Language="csharp">
+      <![CDATA[
+IconPictureBox $name$ = new IconPictureBox() {
+    IconChar = IconChar.$iconchar$,
+    IconColor = Color.Black,
+    IconSize = 24,
+    BackColor = Color.Transparent,
+    Size = new Size(40, 40),
+    Cursor = Cursors.Hand
+};
+this.Controls.Add($name$);
+      ]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>
+ 

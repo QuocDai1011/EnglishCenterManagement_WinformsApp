@@ -72,6 +72,10 @@ namespace EnglishCenterManagement.Models.Entities.EF
                    .HasColumnName("online_meeting_link")
                    .HasColumnType("text")
                    .HasMaxLength(1000);
+
+            builder.Property(c => c.pathImage)
+                .HasColumnName("path_image")
+                .HasColumnType("TEXT");
         }
     }
 }

@@ -174,6 +174,11 @@ namespace EnglishCenterManagement.Models.Migrations
                         .HasColumnType("date")
                         .HasColumnName("update_at");
 
+                    b.Property<string>("pathImage")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("path_image");
+
                     b.HasKey("ClassId");
 
                     b.ToTable("class", (string)null);
@@ -572,7 +577,7 @@ namespace EnglishCenterManagement.Models.Migrations
                         {
                             StudentId = 1,
                             Address = "TP.HCM",
-                            CreateAt = new DateTime(2025, 10, 21, 17, 3, 30, 87, DateTimeKind.Local).AddTicks(7036),
+                            CreateAt = new DateTime(2025, 11, 19, 17, 7, 49, 605, DateTimeKind.Local).AddTicks(7883),
                             DateOfBirth = new DateOnly(2004, 5, 10),
                             Email = "vana@gmail.com",
                             FullName = "Nguyễn Văn A",
@@ -581,14 +586,14 @@ namespace EnglishCenterManagement.Models.Migrations
                             Password = "123456",
                             PhoneNumber = "0911111111",
                             PhoneNumberOfParents = "0981111111",
-                            UpdateAt = new DateTime(2025, 10, 21, 17, 3, 30, 87, DateTimeKind.Local).AddTicks(7052),
+                            UpdateAt = new DateTime(2025, 11, 19, 17, 7, 49, 605, DateTimeKind.Local).AddTicks(7902),
                             UserName = "nguyenvana"
                         },
                         new
                         {
                             StudentId = 2,
                             Address = "Đồng Nai",
-                            CreateAt = new DateTime(2025, 10, 21, 17, 3, 30, 87, DateTimeKind.Local).AddTicks(7057),
+                            CreateAt = new DateTime(2025, 11, 19, 17, 7, 49, 605, DateTimeKind.Local).AddTicks(7908),
                             DateOfBirth = new DateOnly(2003, 8, 25),
                             Email = "thib@gmail.com",
                             FullName = "Trần Thị B",
@@ -597,14 +602,14 @@ namespace EnglishCenterManagement.Models.Migrations
                             Password = "123456",
                             PhoneNumber = "0912222222",
                             PhoneNumberOfParents = "0982222222",
-                            UpdateAt = new DateTime(2025, 10, 21, 17, 3, 30, 87, DateTimeKind.Local).AddTicks(7058),
+                            UpdateAt = new DateTime(2025, 11, 19, 17, 7, 49, 605, DateTimeKind.Local).AddTicks(7909),
                             UserName = "tranthib"
                         },
                         new
                         {
                             StudentId = 3,
                             Address = "Bình Dương",
-                            CreateAt = new DateTime(2025, 10, 21, 17, 3, 30, 87, DateTimeKind.Local).AddTicks(7061),
+                            CreateAt = new DateTime(2025, 11, 19, 17, 7, 49, 605, DateTimeKind.Local).AddTicks(7915),
                             DateOfBirth = new DateOnly(2004, 1, 17),
                             Email = "vanc@gmail.com",
                             FullName = "Lê Văn C",
@@ -613,7 +618,7 @@ namespace EnglishCenterManagement.Models.Migrations
                             Password = "123456",
                             PhoneNumber = "0913333333",
                             PhoneNumberOfParents = "0983333333",
-                            UpdateAt = new DateTime(2025, 10, 21, 17, 3, 30, 87, DateTimeKind.Local).AddTicks(7062),
+                            UpdateAt = new DateTime(2025, 11, 19, 17, 7, 49, 605, DateTimeKind.Local).AddTicks(7916),
                             UserName = "levanc"
                         });
                 });
@@ -834,7 +839,7 @@ namespace EnglishCenterManagement.Models.Migrations
                         {
                             TeacherID = 1,
                             Address = "Hà Nội",
-                            CreateAt = new DateTime(2025, 10, 21, 17, 3, 30, 92, DateTimeKind.Local).AddTicks(6565),
+                            CreateAt = new DateTime(2025, 11, 19, 17, 7, 49, 611, DateTimeKind.Local).AddTicks(6092),
                             DateOfBirth = new DateOnly(1990, 5, 12),
                             Email = "nguyenvana@example.com",
                             FullName = "Nguyễn Văn A",
@@ -843,14 +848,14 @@ namespace EnglishCenterManagement.Models.Migrations
                             Password = "123456",
                             PhoneNumber = "0912345678",
                             Salary = 15000000m,
-                            UpdateAt = new DateTime(2025, 10, 21, 17, 3, 30, 92, DateTimeKind.Local).AddTicks(6584),
+                            UpdateAt = new DateTime(2025, 11, 19, 17, 7, 49, 611, DateTimeKind.Local).AddTicks(6111),
                             UserName = "nguyenvana"
                         },
                         new
                         {
                             TeacherID = 2,
                             Address = "TP.HCM",
-                            CreateAt = new DateTime(2025, 10, 21, 17, 3, 30, 92, DateTimeKind.Local).AddTicks(6587),
+                            CreateAt = new DateTime(2025, 11, 19, 17, 7, 49, 611, DateTimeKind.Local).AddTicks(6117),
                             DateOfBirth = new DateOnly(1993, 8, 20),
                             Email = "tranthib@example.com",
                             FullName = "Trần Thị B",
@@ -859,14 +864,14 @@ namespace EnglishCenterManagement.Models.Migrations
                             Password = "abcdef",
                             PhoneNumber = "0987654321",
                             Salary = 18000000m,
-                            UpdateAt = new DateTime(2025, 10, 21, 17, 3, 30, 92, DateTimeKind.Local).AddTicks(6588),
+                            UpdateAt = new DateTime(2025, 11, 19, 17, 7, 49, 611, DateTimeKind.Local).AddTicks(6118),
                             UserName = "tranthib"
                         },
                         new
                         {
                             TeacherID = 3,
                             Address = "Đà Nẵng",
-                            CreateAt = new DateTime(2025, 10, 21, 17, 3, 30, 92, DateTimeKind.Local).AddTicks(6593),
+                            CreateAt = new DateTime(2025, 11, 19, 17, 7, 49, 611, DateTimeKind.Local).AddTicks(6126),
                             DateOfBirth = new DateOnly(1988, 2, 15),
                             Email = "lequangc@example.com",
                             FullName = "Lê Quang C",
@@ -875,7 +880,7 @@ namespace EnglishCenterManagement.Models.Migrations
                             Password = "qwerty",
                             PhoneNumber = "0978123456",
                             Salary = 20000000m,
-                            UpdateAt = new DateTime(2025, 10, 21, 17, 3, 30, 92, DateTimeKind.Local).AddTicks(6594),
+                            UpdateAt = new DateTime(2025, 11, 19, 17, 7, 49, 611, DateTimeKind.Local).AddTicks(6127),
                             UserName = "lequangc"
                         });
                 });
