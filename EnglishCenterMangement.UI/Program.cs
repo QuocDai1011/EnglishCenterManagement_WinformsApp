@@ -1,14 +1,10 @@
 ﻿using EnglishCenterManagement.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-
 using EnglishCenterManagement.Models;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
-using Microsoft.Extensions.DependencyInjection;
 using EnglishCenterManagement.UI.Views;
 using EnglishCenterManagement.Models.Entities;
-
+using Microsoft.Data.SqlClient;
 
 namespace EnglishCenterManagement.UI
 {
@@ -29,21 +25,57 @@ namespace EnglishCenterManagement.UI
             // Lấy chuỗi kết nối
             string connectionString = config.GetConnectionString("EnglishCenterDb");
 
+            // Test raw SQL connection first
+            try
+            {
+                using (var sqlConnection = new SqlConnection(connectionString))
+                {
+                    sqlConnection.Open();
+                    MessageBox.Show("✅ SQL Connection successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sqlConnection.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(
+                    $"❌ SQL Connection Failed!\n\n" +
+                    $"Error Number: {ex.Number}\n" +
+                    $"Error Message: {ex.Message}\n\n" +
+                    $"Server: {ex.Server}\n" +
+                    $"Procedure: {ex.Procedure}\n" +
+                    $"Line Number: {ex.LineNumber}",
+                    "Connection Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"❌ Unexpected Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             // Tạo DbContextOptions
             var optionsBuilder = new DbContextOptionsBuilder<EnglishCenterDbContext>();
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(connectionString);  
 
-            // (Tuỳ chọn) kiểm tra kết nối
-            using (var context = new EnglishCenterDbContext(optionsBuilder.Options))
+            // Kiểm tra kết nối EF Core
+            try
             {
-                if (context.Database.CanConnect())
+                using (var context = new EnglishCenterDbContext(optionsBuilder.Options))
                 {
-                    Console.WriteLine("✅ Kết nối cơ sở dữ liệu thành công!");
+                    bool canConnect = context.Database.CanConnect();
+                    if (canConnect)
+                    {
+                        MessageBox.Show("✅ EF Core connection successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("❌ EF Core connection failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("❌ Kết nối cơ sở dữ liệu thất bại!");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"❌ EF Core Error: {ex.Message}\n\nInner: {ex.InnerException?.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             // Khởi chạy ứng dụng WinForms

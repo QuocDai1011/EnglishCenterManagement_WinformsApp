@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EnglishCenterManagement.Models.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -516,9 +516,19 @@ namespace EnglishCenterManagement.Models.Migrations
                 columns: new[] { "student_id", "address", "creat_at", "date_of_birth", "email", "full_name", "gender", "is_active", "password", "phone_number", "phone_number_of_parents", "update_at", "user_name" },
                 values: new object[,]
                 {
-                    { 1, "TP.HCM", new DateTime(2025, 10, 15, 16, 57, 28, 451, DateTimeKind.Local).AddTicks(4164), new DateOnly(2004, 5, 10), "vana@gmail.com", "Nguyễn Văn A", true, true, "123456", "0911111111", "0981111111", new DateTime(2025, 10, 15, 16, 57, 28, 451, DateTimeKind.Local).AddTicks(4179), "nguyenvana" },
-                    { 2, "Đồng Nai", new DateTime(2025, 10, 15, 16, 57, 28, 451, DateTimeKind.Local).AddTicks(4183), new DateOnly(2003, 8, 25), "thib@gmail.com", "Trần Thị B", false, true, "123456", "0912222222", "0982222222", new DateTime(2025, 10, 15, 16, 57, 28, 451, DateTimeKind.Local).AddTicks(4184), "tranthib" },
-                    { 3, "Bình Dương", new DateTime(2025, 10, 15, 16, 57, 28, 451, DateTimeKind.Local).AddTicks(4187), new DateOnly(2004, 1, 17), "vanc@gmail.com", "Lê Văn C", true, true, "123456", "0913333333", "0983333333", new DateTime(2025, 10, 15, 16, 57, 28, 451, DateTimeKind.Local).AddTicks(4188), "levanc" }
+                    { 1, "TP.HCM", new DateTime(2025, 10, 22, 17, 1, 30, 777, DateTimeKind.Local).AddTicks(5788), new DateOnly(2004, 5, 10), "vana@gmail.com", "Nguyễn Văn A", true, true, "123456", "0911111111", "0981111111", new DateTime(2025, 10, 22, 17, 1, 30, 777, DateTimeKind.Local).AddTicks(5808), "nguyenvana" },
+                    { 2, "Đồng Nai", new DateTime(2025, 10, 22, 17, 1, 30, 777, DateTimeKind.Local).AddTicks(5827), new DateOnly(2003, 8, 25), "thib@gmail.com", "Trần Thị B", false, true, "123456", "0912222222", "0982222222", new DateTime(2025, 10, 22, 17, 1, 30, 777, DateTimeKind.Local).AddTicks(5828), "tranthib" },
+                    { 3, "Bình Dương", new DateTime(2025, 10, 22, 17, 1, 30, 777, DateTimeKind.Local).AddTicks(5834), new DateOnly(2004, 1, 17), "vanc@gmail.com", "Lê Văn C", true, true, "123456", "0913333333", "0983333333", new DateTime(2025, 10, 22, 17, 1, 30, 777, DateTimeKind.Local).AddTicks(5835), "levanc" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "teachers",
+                columns: new[] { "admin_id", "address", "create_at", "date_of_birth", "email", "full_name", "gender", "is_active", "password", "phone_number", "salary", "update_at", "user_name" },
+                values: new object[,]
+                {
+                    { 1, "Hà Nội", new DateTime(2025, 10, 22, 17, 1, 30, 781, DateTimeKind.Local).AddTicks(4410), new DateOnly(1990, 5, 12), "nguyenvana@example.com", "Nguyễn Văn A", true, true, "123456", "0912345678", 15000000m, new DateTime(2025, 10, 22, 17, 1, 30, 781, DateTimeKind.Local).AddTicks(4430), "nguyenvana" },
+                    { 2, "TP.HCM", new DateTime(2025, 10, 22, 17, 1, 30, 781, DateTimeKind.Local).AddTicks(4437), new DateOnly(1993, 8, 20), "tranthib@example.com", "Trần Thị B", false, true, "abcdef", "0987654321", 18000000m, new DateTime(2025, 10, 22, 17, 1, 30, 781, DateTimeKind.Local).AddTicks(4438), "tranthib" },
+                    { 3, "Đà Nẵng", new DateTime(2025, 10, 22, 17, 1, 30, 781, DateTimeKind.Local).AddTicks(4443), new DateOnly(1988, 2, 15), "lequangc@example.com", "Lê Quang C", true, true, "qwerty", "0978123456", 20000000m, new DateTime(2025, 10, 22, 17, 1, 30, 781, DateTimeKind.Local).AddTicks(4444), "lequangc" }
                 });
 
             migrationBuilder.CreateIndex(
