@@ -16,7 +16,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Teacher\" />
+    <Folder Include="Views\Teacher1\" />
     <Folder Include="Views\SystemAcess\" />
   </ItemGroup>
 
@@ -31,6 +31,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.10" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +41,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Update="Views\MainForm.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Views\StudentDai\index.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
@@ -55,7 +59,7 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Views\Student\assets\lesson.jpg">
+    <None Update="Views\StudentDai\assets\lesson.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
