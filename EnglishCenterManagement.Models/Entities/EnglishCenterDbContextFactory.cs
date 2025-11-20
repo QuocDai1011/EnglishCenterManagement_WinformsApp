@@ -8,7 +8,7 @@ namespace EnglishCenterManagement.Models.Entities
         public EnglishCenterDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<EnglishCenterDbContext>();
-            optionsBuilder.UseSqlServer("Server=localhost,1444;Database=english_center_management_dev;User Id=english_center_manager;Password=Abc1234@;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-9N554RA\\SQLEXPRESS;Database=english_center_management_dev;Trusted_Connection=True;TrustServerCertificate=True;");
 
             return new EnglishCenterDbContext(optionsBuilder.Options);
         }

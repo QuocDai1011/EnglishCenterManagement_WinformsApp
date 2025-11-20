@@ -48,7 +48,7 @@ namespace EnglishCenterManagement.UI
 
             // Khởi chạy ứng dụng WinForms
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Application.Run(new StudentFrom());
         }
     }
 }
