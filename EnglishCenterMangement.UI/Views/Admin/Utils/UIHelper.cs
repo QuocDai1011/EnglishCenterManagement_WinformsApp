@@ -150,5 +150,36 @@ namespace EnglishCenterMangement.UI.Views.Admin.Utils
             MakeRoundedWithBorder(panel, radius, borderColor, borderWidth);
             return panel;
         }
+
+        public static void SetFormBusy(Form form, bool isBusy)
+        {
+            form.Enabled = !isBusy;
+            form.Cursor = isBusy ? Cursors.WaitCursor : Cursors.Default;
+        }
+
+        public static void SetControlsBusy(Control[] controls, bool isBusy)
+        {
+            foreach (var control in controls)
+            {
+                control.Enabled = !isBusy;
+            }
+        }
+
+        public static void ClearTextBoxes(params TextBox[] textBoxes)
+        {
+            foreach (var textBox in textBoxes)
+            {
+                textBox.Clear();
+            }
+        }
+
+        public static void ResetComboBoxes(params ComboBox[] comboBoxes)
+        {
+            foreach (var comboBox in comboBoxes)
+            {
+                if (comboBox.Items.Count > 0)
+                    comboBox.SelectedIndex = 0;
+            }
+        }
     }
 }

@@ -19,11 +19,11 @@ namespace EnglishCenterMangement.UI.Views.Admin.Pages.Classes
         private FlowLayoutPanel classesFlowPanel;
         private List<Class> allClasses;
 
-        private readonly IClassService _classService;
+        private readonly ServiceHub _service;
 
-        public ClassesPagePanel(IClassService classService)
+        public ClassesPagePanel(ServiceHub service)
         {
-            _classService = classService;
+            _service = service;
 
             InitializeComponent();
             allClasses = getAllClass(); 
@@ -31,7 +31,7 @@ namespace EnglishCenterMangement.UI.Views.Admin.Pages.Classes
 
         private List<Class> getAllClass()
         {
-            return _classService.GetAllClasses().ToList();
+            return _service.ClassService.GetAllClasses().ToList();
            
         }
 
@@ -310,7 +310,7 @@ namespace EnglishCenterMangement.UI.Views.Admin.Pages.Classes
         void Card_Click(object sender, EventArgs e, Class classObj)
         {
             contentPanel.Controls.Clear(); // Xóa các control hiện tại
-            var detailPanel = new StudentOfClass(classObj);
+            var detailPanel = new StudentOfClass(classObj, _service);
             //Panel newPanel = new Panel
             //{
             //    Dock = DockStyle.Fill,

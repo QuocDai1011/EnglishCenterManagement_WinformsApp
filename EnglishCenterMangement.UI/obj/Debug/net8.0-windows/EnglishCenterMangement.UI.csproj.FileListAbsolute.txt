@@ -287,3 +287,4 @@ D:\Work\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCente
 D:\Work\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
 D:\Work\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\bin\Debug\net8.0-windows\System.Diagnostics.DiagnosticSource.dll
 D:\Work\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\obj\Debug\net8.0-windows\EnglishCenterMangement.UI.Views.Admin.Pages.Classes.StudentOfClass.resources
+D:\Work\Coding\CSharp\BaiTapLon\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\obj\Debug\net8.0-windows\EnglishCenterManagement.UI.Views.Admin.Pages.Classes.StudentAddEditForm.resources

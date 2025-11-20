@@ -1,4 +1,4 @@
-﻿using EnglishCenterManagement.Models.Services;
+﻿using EnglishCenterManagement.Models.Services.Interfaces;
 using EnglishCenterMangement.UI.Views.Admin.Pages.Base;
 using EnglishCenterMangement.UI.Views.Admin.Utils;
 using FontAwesome.Sharp;

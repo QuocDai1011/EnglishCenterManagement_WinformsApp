@@ -91,11 +91,62 @@ namespace EnglishCenterManagement.Models.Entities.EF
 
             //======= SeedData ========
             _ = builder.HasData(
-                new Student { StudentId = 1, UserName = "nguyenvana", Password = "123456", FullName = "Nguyễn Văn A", Email = "vana@gmail.com", Gender = true, Address = "TP.HCM", DateOfBirth = new DateOnly(2004, 5, 10), PhoneNumber = "0911111111", PhoneNumberOfParents = "0981111111", CreateAt = DateTime.Now, UpdateAt = DateTime.Now, IsActive = true },
-                new Student { StudentId = 2, UserName = "tranthib", Password = "123456", FullName = "Trần Thị B", Email = "thib@gmail.com", Gender = false, Address = "Đồng Nai", DateOfBirth = new DateOnly(2003, 8, 25), PhoneNumber = "0912222222", PhoneNumberOfParents = "0982222222", CreateAt = DateTime.Now, UpdateAt = DateTime.Now, IsActive = true },
-                new Student { StudentId = 3, UserName = "levanc", Password = "123456", FullName = "Lê Văn C", Email = "vanc@gmail.com", Gender = true, Address = "Bình Dương", DateOfBirth = new DateOnly(2004, 1, 17), PhoneNumber = "0913333333", PhoneNumberOfParents = "0983333333", CreateAt = DateTime.Now, UpdateAt = DateTime.Now, IsActive = true }
-                
-            );
+    new Student(
+        userName: "nguyenvana",
+        password: "123456",
+        fullName: "Nguyễn Văn A",
+        email: "vana@gmail.com",
+        gender: true,
+        address: "TP.HCM",
+        dateOfBirth: new DateOnly(2004, 5, 10),
+        phoneNumber: "0911111111",
+        phoneNumberOfParents: "0981111111",
+        createAt: DateTime.Now,
+        updateAt: DateTime.Now,
+        isActive: true
+    )
+    {
+        StudentId = -1
+    },
+
+    new Student(
+        userName: "tranthib",
+        password: "123456",
+        fullName: "Trần Thị B",
+        email: "thib@gmail.com",
+        gender: false,
+        address: "Đồng Nai",
+        dateOfBirth: new DateOnly(2003, 8, 25),
+        phoneNumber: "0912222222",
+        phoneNumberOfParents: "0982222222",
+        createAt: DateTime.Now,
+        updateAt: DateTime.Now,
+        isActive: true
+    )
+    {
+        StudentId = -2
+    },
+
+    new Student(
+        userName: "levanc",
+        password: "123456",
+        fullName: "Lê Văn C",
+        email: "vanc@gmail.com",
+        gender: true,
+        address: "Bình Dương",
+        dateOfBirth: new DateOnly(2004, 1, 17),
+        phoneNumber: "0913333333",
+        phoneNumberOfParents: "0983333333",
+        createAt: DateTime.Now,
+        updateAt: DateTime.Now,
+        isActive: true
+    )
+    {
+        StudentId = -3
+    }
+);
+
+
 
         }
     }

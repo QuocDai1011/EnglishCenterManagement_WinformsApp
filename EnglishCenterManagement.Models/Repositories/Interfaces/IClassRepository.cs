@@ -1,10 +1,10 @@
 ﻿using EnglishCenterManagement.Models.Entities;
 
-namespace EnglishCenterManagement.Models.Services
+namespace EnglishCenterManagement.Models.Repositories.Interfaces
 {
-    public interface IClassService
+    public interface IClassRepository
     {
-        IEnumerable<Class> GetAllClasses();
+        IEnumerable<Class> GetAll();
         Class GetById(int id);
         void Create(Class entity);
         void Update(Class entity);

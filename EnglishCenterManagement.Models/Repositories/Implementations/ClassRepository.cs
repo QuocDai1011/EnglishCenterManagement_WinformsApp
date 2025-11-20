@@ -1,6 +1,5 @@
 ﻿using EnglishCenterManagement.Models.Entities;
-using EnglishCenterManagement.Models.Repositories;
-using Microsoft.EntityFrameworkCore;
+using EnglishCenterManagement.Models.Repositories.Interfaces;
 
 public class ClassRepository : IClassRepository
 {
@@ -12,13 +11,16 @@ public class ClassRepository : IClassRepository
     }
 
     public IEnumerable<Class> GetAll()
-    {
-        return _context.Classes.ToList();
-    }
+        => _context.Classes.ToList();
 
     public Class GetById(int id)
     {
-        return _context.Classes.Find(id);
+        Class cl = _context.Classes.Find(id);
+        if(cl == null)
+        {
+            throw new KeyNotFoundException("Class not found");
+        }
+        return cl;
     }
 
     public void Create(Class entity)
@@ -35,10 +37,10 @@ public class ClassRepository : IClassRepository
 
     public void Delete(int id)
     {
-        var item = _context.Classes.Find(id);
-        if (item != null)
+        var cls = _context.Classes.Find(id);
+        if (cls != null)
         {
-            _context.Classes.Remove(item);
+            _context.Classes.Remove(cls);
             _context.SaveChanges();
         }
     }

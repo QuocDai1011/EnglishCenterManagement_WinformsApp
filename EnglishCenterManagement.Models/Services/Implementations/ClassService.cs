@@ -1,7 +1,8 @@
 ﻿using EnglishCenterManagement.Models.Entities;
-using EnglishCenterManagement.Models.Repositories;
+using EnglishCenterManagement.Models.Repositories.Interfaces;
+using EnglishCenterManagement.Models.Services.Interfaces;
 
-namespace EnglishCenterManagement.Models.Services
+namespace EnglishCenterManagement.Models.Services.Implementations
 {
     public class ClassService : IClassService
     {
@@ -17,22 +18,22 @@ namespace EnglishCenterManagement.Models.Services
             return _classRepository.GetAll();
         }
 
-        public Class GetById(int id)
+        public Class GetClassById(int id)
         {
             return _classRepository.GetById(id);
         }
 
-        public void Create(Class entity)
+        public void CreateClass(Class entity)
         {
             _classRepository.Create(entity);
         }
 
-        public void Update(Class entity)
+        public void UpdateClass(Class entity)
         {
             _classRepository.Update(entity);
         }
 
-        public void Delete(int id)
+        public void DeleteClass(int id)
         {
             _classRepository.Delete(id);
         }

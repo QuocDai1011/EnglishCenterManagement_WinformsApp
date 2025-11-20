@@ -17,7 +17,7 @@ namespace EnglishCenterMangement.UI.Views.Admin.Utils
 
         public PageFactory(IServiceProvider provider)
         {
-            _provider = provider;
+            _provider = provider; 
         }
         public  BasePagePanel CreatePage(string action)
         {

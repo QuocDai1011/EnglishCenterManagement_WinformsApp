@@ -43,5 +43,30 @@ namespace EnglishCenterManagement.Models.Entities
 
         // 1-N with StudentAttendance
         public ICollection<StudentAttendance> StudentAttendances { get; set; } = new List<StudentAttendance>();
+
+        public Student(
+              string userName, string password,
+            string fullName, string email, bool gender, string address,
+            DateOnly? dateOfBirth, string phoneNumber, string phoneNumberOfParents,
+            DateTime? createAt, DateTime? updateAt, bool isActive
+            )
+        {
+            UserName = userName;
+            Password = password;
+            FullName = fullName;
+            Email = email;
+            Gender = gender;
+            Address = address;
+            DateOfBirth = dateOfBirth;
+            PhoneNumber = phoneNumber;
+            PhoneNumberOfParents = phoneNumberOfParents;
+            CreateAt = createAt;
+            UpdateAt = updateAt;
+            IsActive = isActive;
+        }
+
+        public Student()
+        {
+        }
     }
 }

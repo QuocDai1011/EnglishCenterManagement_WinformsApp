@@ -1,6 +1,9 @@
 ﻿using EnglishCenterManagement.Models.Entities;
-using EnglishCenterManagement.Models.Repositories;
+using EnglishCenterManagement.Models.Repositories.Implementations;
+using EnglishCenterManagement.Models.Repositories.Interfaces;
 using EnglishCenterManagement.Models.Services;
+using EnglishCenterManagement.Models.Services.Implementations;
+using EnglishCenterManagement.Models.Services.Interfaces;
 using EnglishCenterMangement.UI.Views.Admin.Pages.Base;
 using EnglishCenterMangement.UI.Views.Admin.Pages.Classes;
 using EnglishCenterMangement.UI.Views.Admin.Pages.Dashboard;
@@ -34,14 +37,21 @@ namespace EnglishCenterMangement.UI
 
             // --- Đăng ký Repository ---
             services.AddScoped<IClassRepository, ClassRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
 
             // thêm repo khác…
 
 
             // --- Đăng ký Service ---
             services.AddScoped<IClassService,ClassService>();
+            services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<ICourseService, CourseService>();
 
             // thêm service khác…
+
+            // Service hub
+            services.AddScoped<ServiceHub>();
 
             // --- Đăng ký Form / Pages ---
             services.AddTransient<HomeForm>();
@@ -49,6 +59,7 @@ namespace EnglishCenterMangement.UI
             services.AddTransient<DashboardPagePanel>();
             services.AddTransient<ManagePagePanel>();
             services.AddTransient<BasePagePanel>();
+            services.AddTransient<StudentOfClass>();
 
             services.AddSingleton<PageFactory>();
 

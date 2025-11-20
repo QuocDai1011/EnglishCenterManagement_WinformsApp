@@ -16,6 +16,9 @@
     <Compile Update="Views\Admin\Pages\Classes\ClassesPagePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Views\Admin\Pages\Classes\StudentAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Admin\Pages\Classes\StudentOfClass.cs">
       <SubType>UserControl</SubType>
     </Compile>

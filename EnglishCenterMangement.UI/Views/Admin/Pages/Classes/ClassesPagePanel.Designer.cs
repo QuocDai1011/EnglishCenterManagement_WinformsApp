@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            this.Name = "ClassesPagePanel";
-            this.ResumeLayout(false);
+            SuspendLayout();
+            // 
+            // contentPanel
+            // 
+            contentPanel.Size = new Size(1243, 505);
+            // 
+            // ClassesPagePanel
+            // 
+            Name = "ClassesPagePanel";
+            Size = new Size(1243, 505);
+            ResumeLayout(false);
         }
 
         #endregion
