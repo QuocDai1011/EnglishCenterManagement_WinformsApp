@@ -10,7 +10,7 @@ using EnglishCenterManagement.UI.Views;
 using EnglishCenterManagement.Models.Entities;
 using EnglishCenterManagement.UI.Views.Student;
 using EnglishCenterManagement.UI.Views.SystemAcess.Pages.Login;
-using EnglishCenterManagement.UI.Views.SystemAcess.Pages.Register;
+using EnglishCenterManagement.UI.Views.SystemAcess.Pages.ForgetForm;
 
 
 namespace EnglishCenterManagement.UI
@@ -29,9 +29,9 @@ namespace EnglishCenterManagement.UI
             //    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             //    .Build();
             var config = new ConfigurationBuilder()
-    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) // optional = true
-    .Build();
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) // optional = true
+            .Build();
 
             // Lấy chuỗi kết nối
             string connectionString = config.GetConnectionString("EnglishCenterDb");
@@ -55,7 +55,7 @@ namespace EnglishCenterManagement.UI
 
             // Khởi chạy ứng dụng WinForms
             ApplicationConfiguration.Initialize();
-            Application.Run(new RegisterForm());
+            Application.Run(new LoginForm(connectionString));
         }
     }
 }
