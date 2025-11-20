@@ -32,19 +32,10 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblIsActive;
         private System.Windows.Forms.CheckBox chkIsActive;
-        private System.Windows.Forms.Label lblCourseSection;
-        private System.Windows.Forms.Label lblCourse;
-        private System.Windows.Forms.ComboBox cboCourse;
-        private System.Windows.Forms.Label lblDiscountType;
-        private System.Windows.Forms.ComboBox cboDiscountType;
-        private System.Windows.Forms.Label lblDiscountValue;
-        private System.Windows.Forms.NumericUpDown numDiscountValue;
-        private System.Windows.Forms.Label lblDiscountNote;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Panel panelButtons;
-        private System.Windows.Forms.Panel panelCourseInfo;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -89,21 +80,10 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
             txtAddress = new TextBox();
             lblIsActive = new Label();
             chkIsActive = new CheckBox();
-            panelCourseInfo = new Panel();
-            lblCourseSection = new Label();
-            lblCourse = new Label();
-            cboCourse = new ComboBox();
-            lblDiscountType = new Label();
-            cboDiscountType = new ComboBox();
-            lblDiscountValue = new Label();
-            numDiscountValue = new NumericUpDown();
-            lblDiscountNote = new Label();
             panelButtons = new Panel();
             btnCancel = new Button();
             btnSave = new Button();
             panelHeader.SuspendLayout();
-            panelCourseInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numDiscountValue).BeginInit();
             panelButtons.SuspendLayout();
             SuspendLayout();
             // 
@@ -319,114 +299,13 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
             chkIsActive.Text = "Hoạt động";
             chkIsActive.UseVisualStyleBackColor = true;
             // 
-            // panelCourseInfo
-            // 
-            panelCourseInfo.BackColor = Color.FromArgb(250, 250, 250);
-            panelCourseInfo.BorderStyle = BorderStyle.FixedSingle;
-            panelCourseInfo.Controls.Add(lblCourseSection);
-            panelCourseInfo.Controls.Add(lblCourse);
-            panelCourseInfo.Controls.Add(cboCourse);
-            panelCourseInfo.Controls.Add(lblDiscountType);
-            panelCourseInfo.Controls.Add(cboDiscountType);
-            panelCourseInfo.Controls.Add(lblDiscountValue);
-            panelCourseInfo.Controls.Add(numDiscountValue);
-            panelCourseInfo.Controls.Add(lblDiscountNote);
-            panelCourseInfo.Location = new Point(15, 580);
-            panelCourseInfo.Name = "panelCourseInfo";
-            panelCourseInfo.Size = new Size(660, 190);
-            panelCourseInfo.TabIndex = 11;
-            // 
-            // lblCourseSection
-            // 
-            lblCourseSection.AutoSize = true;
-            lblCourseSection.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblCourseSection.ForeColor = Color.FromArgb(63, 81, 181);
-            lblCourseSection.Location = new Point(15, 10);
-            lblCourseSection.Name = "lblCourseSection";
-            lblCourseSection.Size = new Size(196, 28);
-            lblCourseSection.TabIndex = 0;
-            lblCourseSection.Text = "Thông tin khóa học";
-            // 
-            // lblCourse
-            // 
-            lblCourse.AutoSize = true;
-            lblCourse.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblCourse.Location = new Point(15, 50);
-            lblCourse.Name = "lblCourse";
-            lblCourse.Size = new Size(96, 23);
-            lblCourse.TabIndex = 1;
-            lblCourse.Text = "Khóa học *";
-            // 
-            // cboCourse
-            // 
-            cboCourse.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboCourse.Font = new Font("Segoe UI", 11F);
-            cboCourse.FormattingEnabled = true;
-            cboCourse.Location = new Point(15, 78);
-            cboCourse.Name = "cboCourse";
-            cboCourse.Size = new Size(620, 33);
-            cboCourse.TabIndex = 10;
-            // 
-            // lblDiscountType
-            // 
-            lblDiscountType.AutoSize = true;
-            lblDiscountType.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblDiscountType.Location = new Point(15, 125);
-            lblDiscountType.Name = "lblDiscountType";
-            lblDiscountType.Size = new Size(132, 23);
-            lblDiscountType.TabIndex = 2;
-            lblDiscountType.Text = "Loại giảm giá *";
-            // 
-            // cboDiscountType
-            // 
-            cboDiscountType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboDiscountType.Font = new Font("Segoe UI", 11F);
-            cboDiscountType.FormattingEnabled = true;
-            cboDiscountType.Items.AddRange(new object[] { "None", "FixedAmount", "Percentage" });
-            cboDiscountType.Location = new Point(15, 153);
-            cboDiscountType.Name = "cboDiscountType";
-            cboDiscountType.Size = new Size(250, 33);
-            cboDiscountType.TabIndex = 11;
-            //cboDiscountType.SelectedIndexChanged += cboDiscountType_SelectedIndexChanged;
-            // 
-            // lblDiscountValue
-            // 
-            lblDiscountValue.AutoSize = true;
-            lblDiscountValue.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblDiscountValue.Location = new Point(285, 125);
-            lblDiscountValue.Name = "lblDiscountValue";
-            lblDiscountValue.Size = new Size(136, 23);
-            lblDiscountValue.TabIndex = 3;
-            lblDiscountValue.Text = "Giá trị giảm giá";
-            // 
-            // numDiscountValue
-            // 
-            numDiscountValue.DecimalPlaces = 2;
-            numDiscountValue.Font = new Font("Segoe UI", 11F);
-            numDiscountValue.Location = new Point(285, 153);
-            numDiscountValue.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
-            numDiscountValue.Name = "numDiscountValue";
-            numDiscountValue.Size = new Size(200, 32);
-            numDiscountValue.TabIndex = 12;
-            // 
-            // lblDiscountNote
-            // 
-            lblDiscountNote.AutoSize = true;
-            lblDiscountNote.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
-            lblDiscountNote.ForeColor = Color.Gray;
-            lblDiscountNote.Location = new Point(500, 128);
-            lblDiscountNote.Name = "lblDiscountNote";
-            lblDiscountNote.Size = new Size(152, 60);
-            lblDiscountNote.TabIndex = 4;
-            lblDiscountNote.Text = "FixedAmount: VNĐ\r\nPercentage: %\r\nNone: Không giảm giá";
-            // 
             // panelButtons
             // 
             panelButtons.BackColor = Color.FromArgb(245, 245, 245);
             panelButtons.Controls.Add(btnCancel);
             panelButtons.Controls.Add(btnSave);
             panelButtons.Dock = DockStyle.Bottom;
-            panelButtons.Location = new Point(0, 785);
+            panelButtons.Location = new Point(0, 574);
             panelButtons.Name = "panelButtons";
             panelButtons.Size = new Size(700, 75);
             panelButtons.TabIndex = 12;
@@ -469,9 +348,8 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.White;
-            ClientSize = new Size(700, 860);
+            ClientSize = new Size(700, 649);
             Controls.Add(panelButtons);
-            Controls.Add(panelCourseInfo);
             Controls.Add(txtAddress);
             Controls.Add(lblAddress);
             Controls.Add(chkIsActive);
@@ -501,9 +379,6 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
             Text = "Thêm sinh viên vào lớp học";
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
-            panelCourseInfo.ResumeLayout(false);
-            panelCourseInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numDiscountValue).EndInit();
             panelButtons.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

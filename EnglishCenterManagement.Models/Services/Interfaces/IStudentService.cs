@@ -10,7 +10,8 @@ namespace EnglishCenterManagement.Models.Services.Interfaces
         Student GetById(int id);
 
         string Create(Student student);
-        void Update(Student student);
+        string Update(Student student);
         void Delete(int id);
+
     }
 }

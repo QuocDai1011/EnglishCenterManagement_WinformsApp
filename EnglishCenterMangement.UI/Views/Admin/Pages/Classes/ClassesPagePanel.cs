@@ -222,12 +222,17 @@ namespace EnglishCenterMangement.UI.Views.Admin.Pages.Classes
             // Sử dụng MakeRoundedWithBorder thay vì BorderStyle
             UIHelper.MakeRoundedWithBorder(card, 12, Color.FromArgb(220, 220, 220), 1);
 
+            string baseFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..\\");
+            string imagePath = Path.Combine(baseFolder, classInfo.pathImage);
+
             // Image/Thumbnail - tăng chiều cao
             PictureBox thumbnail = new PictureBox
             {
                 Location = new Point(0, 0),
                 Size = new Size(cardWidth, 240),
-                Image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..\\", classInfo.pathImage)),
+                Image = File.Exists(imagePath)
+                        ? Image.FromFile(imagePath)
+                        : Properties.Resources.defaultBanner2,
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
 
@@ -310,20 +315,7 @@ namespace EnglishCenterMangement.UI.Views.Admin.Pages.Classes
         void Card_Click(object sender, EventArgs e, Class classObj)
         {
             contentPanel.Controls.Clear(); // Xóa các control hiện tại
-            var detailPanel = new StudentOfClass(classObj, _service);
-            //Panel newPanel = new Panel
-            //{
-            //    Dock = DockStyle.Fill,
-            //    BackColor = Color.White
-            //};
 
-            //Label text = new Label();
-            //text.Text = "Mã lớp học: " + classObj.ClassCode;
-            //text.ForeColor = Color.Black;
-            //text.Width = 200;
-            //text.Height = 50;
-            //newPanel.Controls.Add(text);
-            contentPanel.Controls.Add(detailPanel);
         }
         private void FilterClasses(string searchText)
         {

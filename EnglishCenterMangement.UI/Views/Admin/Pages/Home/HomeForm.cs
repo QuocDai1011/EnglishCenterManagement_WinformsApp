@@ -1,4 +1,6 @@
-﻿using EnglishCenterMangement.UI.Views.Admin.Components.Header;
+﻿using EnglishCenterManagement.Models.Services;
+using EnglishCenterManagement.UI.Views.Admin.Pages.Classes;
+using EnglishCenterMangement.UI.Views.Admin.Components.Header;
 using EnglishCenterMangement.UI.Views.Admin.Components.Sidebar;
 using EnglishCenterMangement.UI.Views.Admin.Pages.Base;
 using EnglishCenterMangement.UI.Views.Admin.Utils;
@@ -15,13 +17,14 @@ namespace EnglishCenterMangement.UI.Views.Admin.Pages.Home
         private Panel mainContentPanel;
         private Panel containerPanel;
         private readonly PageFactory _pageFactory;
-
-        public HomeForm(PageFactory pageFactory)
+        private readonly ServiceHub _serviceHub;
+        public HomeForm(PageFactory pageFactory, ServiceHub serviceHub)
         {
             InitializeComponent();
             SetupForm();
             CreateComponents();
             _pageFactory = pageFactory;
+            _serviceHub = serviceHub;
         }
 
         private void SetupForm()
@@ -39,7 +42,7 @@ namespace EnglishCenterMangement.UI.Views.Admin.Pages.Home
                 Dock = DockStyle.Top,
                 Height = 80
             };
-            headerControl.OnMenuItemClick += HeaderControl_OnMenuItemClick;
+            headerControl.OnMenuItemClick += HeaderMenuClick;
             this.Controls.Add(headerControl);
 
             // Container Panel - Chứa Sidebar và Main Content, nằm dưới header
@@ -217,21 +220,57 @@ namespace EnglishCenterMangement.UI.Views.Admin.Pages.Home
             };
         }
 
-        private void HeaderControl_OnMenuItemClick(object sender, string action)
+        private void HeaderMenuClick(object sender, string action)
         {
-            if (action.StartsWith("language:"))
+            // action = "profile:Hồ sơ"
+            // action = "menu:Thêm sinh viên"
+            // action = "create:Tạo bài viết"
+
+            MessageBox.Show("Bạn vừa chọn: " + action);
+
+            // Tách category và item nếu cần
+            var parts = action.Split(':');
+            string category = parts[0];
+            string item = parts[1];
+
+            switch (category)
             {
-                string language = action.Substring(9);
-                MessageBox.Show($"Đổi ngôn ngữ: {language}");
+                case "profile":
+                    if (item == "Đăng xuất")
+                        Logout();
+                    else if (item == "Hồ sơ")
+                        OpenProfile();
+                    break;
+
+                case "menu":
+                    if (item == "Thêm sinh viên")
+                        OpenAddStudent();
+                    break;
             }
-            else if (action == "home")
+        }
+
+        private void OpenAddStudent()
+        {
+            var addForm = new StudentAddEditForm(_serviceHub);
+
+            if (addForm.ShowDialog() == DialogResult.OK)
             {
-                LoadDefaultContent();
+                MessageBox.Show(
+                    "Thêm sinh viên thành công!",
+                    "Thành công",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-            else
-            {
-                MessageBox.Show($"Header clicked: {action}", "Header Action");
-            }
+        }
+
+        private void Logout()
+        {
+            MessageBox.Show("Đăng xuất thành công!", "Đăng xuất");
+        }
+
+        private void OpenProfile()
+        {
+            MessageBox.Show("Mở trang hồ sơ cá nhân", "Hồ sơ");
         }
 
         private void SidebarControl_OnMenuItemClick(object sender, string action)

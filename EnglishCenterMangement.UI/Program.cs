@@ -48,6 +48,7 @@ namespace EnglishCenterMangement.UI
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<ICourseService, CourseService>();
 
+
             // thêm service khác…
 
             // Service hub
@@ -59,7 +60,7 @@ namespace EnglishCenterMangement.UI
             services.AddTransient<DashboardPagePanel>();
             services.AddTransient<ManagePagePanel>();
             services.AddTransient<BasePagePanel>();
-            services.AddTransient<StudentOfClass>();
+            services.AddTransient<StudentsPagePanel>();
 
             services.AddSingleton<PageFactory>();
 

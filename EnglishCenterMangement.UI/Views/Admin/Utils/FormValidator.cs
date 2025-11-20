@@ -18,9 +18,6 @@ namespace EnglishCenterMangement.UI.Views.Admin.Utils
             string phoneParents,
             DateTime dateOfBirth,
             int genderIndex,
-            int courseIndex,
-            int discountTypeIndex,
-            decimal discountValue,
             out string errorMessage)
         {
             StringBuilder errors = new StringBuilder();
@@ -76,14 +73,6 @@ namespace EnglishCenterMangement.UI.Views.Admin.Utils
             // Gender
             if (genderIndex < 0)
                 errors.AppendLine("• Vui lòng chọn giới tính!");
-
-            // Course
-            if (courseIndex < 0)
-                errors.AppendLine("• Vui lòng chọn khóa học!");
-
-            // Discount
-            if (discountTypeIndex < 0)
-                errors.AppendLine("• Vui lòng chọn loại giảm giá!");
 
             errorMessage = errors.ToString();
             return errors.Length == 0;

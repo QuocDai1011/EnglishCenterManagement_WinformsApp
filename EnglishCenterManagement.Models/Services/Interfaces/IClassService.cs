@@ -7,7 +7,7 @@ namespace EnglishCenterManagement.Models.Services.Interfaces
         IEnumerable<Class> GetAllClasses();
         Class GetClassById(int id);
         void CreateClass(Class entity);
-        void UpdateClass(Class entity);
+        string UpdateClass(Class entity);
         void DeleteClass(int id);
     }
 }
