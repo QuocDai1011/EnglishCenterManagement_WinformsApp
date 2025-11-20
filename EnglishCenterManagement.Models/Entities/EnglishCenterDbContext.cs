@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,9 @@ namespace EnglishCenterManagement.Models.Entities
 {
     public class EnglishCenterDbContext : DbContext
     {
+        public EnglishCenterDbContext()
+        {
+        }
         //Constructor nhận DbContextOptions
         public EnglishCenterDbContext(DbContextOptions<EnglishCenterDbContext> options)
             : base(options)
@@ -28,7 +32,7 @@ namespace EnglishCenterManagement.Models.Entities
         DbSet<ProvinceCity> ProvinceCities { get; set; }
         DbSet<Receipt> Receipts { get; set; }
         DbSet<ResultExam> ResultExams { get; set; }
-        DbSet<Student> Students { get; set; }
+        public DbSet<Student> Students { get; set; }
         DbSet<StudentAttendance> StudentAttendances { get; set; }
         DbSet<StudentClass> StudentClasses { get; set; }
         DbSet<StudentCourse> StudentCourses { get; set; }
@@ -37,6 +41,15 @@ namespace EnglishCenterManagement.Models.Entities
         DbSet<TeacherAttendance> TeacherAttendances { get; set; }
         DbSet<TeacherClass> TeacherClasses { get; set; }
         DbSet<TeacherCourse> TeacherCourses { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(
+                    "Server=DESKTOP-3A6OS2F\\SQLEXPRESS;Database=EnglishCenterManagementDev;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

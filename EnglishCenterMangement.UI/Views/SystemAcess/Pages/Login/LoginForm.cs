@@ -54,7 +54,7 @@ namespace EnglishCenterManagement.UI.Views.SystemAcess.Pages.Login
                         {
                             string dbPassword = result.ToString();
 
-                            if (dbPassword == password)
+                            if (BCrypt.Net.BCrypt.Verify(password, dbPassword))
                             {
                                 MessageBox.Show($"Đăng nhập thành công! (Vai trò: {table})");
                                 return true;
@@ -88,11 +88,17 @@ namespace EnglishCenterManagement.UI.Views.SystemAcess.Pages.Login
             txbEmailLogin.Text = "";
             txbPassLogin.Text = "";
         }
-
+        //pnBackgroundRegister.Visible = true;
+        //pnBackgroundLogin.Visible = false;
         private void lblNavigationLogin_Click(object sender, EventArgs e)
         {
             pnBackgroundRegister.Visible = false;
             pnBackgroundLogin.Visible = true;
+        }
+        private void lblNavigationRegister_Click(object sender, EventArgs e)
+        {
+            pnBackgroundRegister.Visible = true;
+            pnBackgroundLogin.Visible = false;
         }
         private void clearRegisterForm()
         {
@@ -256,8 +262,16 @@ namespace EnglishCenterManagement.UI.Views.SystemAcess.Pages.Login
 
         private void lblForgetPass_Click(object sender, EventArgs e)
         {
-            var forgetForm = new ForgetForm.ForgetForm();
-            forgetForm.ShowDialog();
+            try
+            {
+                var forgetForm = new ForgetForm.ForgetForm();
+                forgetForm.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi mở form quên mật khẩu: " + ex.Message);
+            }
         }
     }
 }

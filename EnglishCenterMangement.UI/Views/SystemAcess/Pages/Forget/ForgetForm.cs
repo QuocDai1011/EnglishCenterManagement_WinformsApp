@@ -1,15 +1,18 @@
-﻿using EnglishCenterManagement.Models.Services;
+﻿using EnglishCenterManagement.Models.Entities;
+using EnglishCenterManagement.Models.Services;
+using Guna.UI2.WinForms;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace EnglishCenterManagement.UI.Views.SystemAcess.Pages.ForgetForm
 {
     public partial class ForgetForm : Form
     {
+        string Email = "";
         private readonly IEmailService _emailService;
         private readonly string jsonFilePath = "appsettings.json";
         public ForgetForm()
@@ -60,15 +63,16 @@ namespace EnglishCenterManagement.UI.Views.SystemAcess.Pages.ForgetForm
 
             OtpStorage.CurrentOtp = otp;
             OtpStorage.CurrentEmail = email;
-            OtpStorage.ExpireAt = DateTime.UtcNow.AddMinutes(2); 
+            OtpStorage.ExpireAt = DateTime.UtcNow.AddMinutes(2);
             OtpStorage.AttemptCount = 0;
             try
             {
                 _emailService.SendOtpEmail(email, otp);
-                MessageBox.Show("Mã OTP đã được gửi vào email của bạn.");
+                MessageBox.Show("Mã OTP đã được gửi vào email của bạn.", email);
                 pnB2.Visible = true;
                 pnB1.Visible = false;
                 this.Controls.Find("txbOTPcode0", true).FirstOrDefault()?.Focus();
+
             }
             catch (Exception ex)
             {
@@ -174,10 +178,10 @@ namespace EnglishCenterManagement.UI.Views.SystemAcess.Pages.ForgetForm
             if (!string.IsNullOrEmpty(inputOtp) && inputOtp == OtpStorage.CurrentOtp)
             {
                 MessageBox.Show("Xác thực OTP thành công!");
-                OtpStorage.Clear();
+                //OtpStorage.Clear();
                 otpClear();
                 pnB2.Visible = false;
-                pnB1.Visible = true;
+                pnB3.Visible = true;
             }
             else
             {
@@ -190,5 +194,62 @@ namespace EnglishCenterManagement.UI.Views.SystemAcess.Pages.ForgetForm
                 this.Controls.Find("txbOTPcode0", true).FirstOrDefault()?.Focus();
             }
         }
+        private async void btnSubmitPass_Click(object sender, EventArgs e)
+        {
+            string newPass = txbNewPass.Text.Trim();
+            string confirm = txbConfirmNewPass.Text.Trim();
+
+            if (string.IsNullOrEmpty(newPass) || string.IsNullOrEmpty(confirm))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ mật khẩu mới!");
+                return;
+            }
+
+            if (newPass != confirm)
+            {
+                MessageBox.Show("Mật khẩu nhập lại không khớp!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(OtpStorage.CurrentEmail))
+            {
+                MessageBox.Show("Không tìm thấy email đang xác thực.");
+                return;
+            }
+
+            string email = OtpStorage.CurrentEmail;
+
+
+            string hashed = BCrypt.Net.BCrypt.HashPassword(newPass);
+
+            try
+            {
+                using (var db = new EnglishCenterDbContext())
+                {
+
+                    var student = db.Students.FirstOrDefault(s => s.Email == email);
+                    if (student != null)
+                    {
+                        student.Password = hashed;
+                        await db.SaveChangesAsync();
+                        MessageBox.Show("Đổi mật khẩu Student thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy Student.");
+                        return;
+                    }
+
+                    // Xoá OTP sau khi thành công
+                    OtpStorage.Clear();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật mật khẩu: " + ex.Message);
+            }
+        }
+
     }
 }
