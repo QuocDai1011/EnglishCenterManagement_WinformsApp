@@ -14,6 +14,7 @@ namespace EnglishCenterManagement.Models.Entities
         public EnglishCenterDbContext(DbContextOptions<EnglishCenterDbContext> options)
             : base(options)
         {
+
         }
 
         // Các DbSet tương ứng với entity
@@ -22,6 +23,7 @@ namespace EnglishCenterManagement.Models.Entities
         public DbSet<ClassCourse> ClassCourses { get; set; }
         DbSet<CommuneDistrict> CommuneDistricts { get; set; }
         public DbSet<Course> Courses { get; set; }
+<<<<<<< HEAD
         public DbSet<ExamType> ExamTypes { get; set; }
         public DbSet<Exercise> Exercises { get; set; }
         public DbSet<Expertise> Expertises { get; set; }
@@ -36,6 +38,22 @@ namespace EnglishCenterManagement.Models.Entities
         public DbSet<StudentExercise> StudentExercises { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<TeacherAttendance> TeacherAttendances { get; set; }
+=======
+        DbSet<ExamType> ExamTypes { get; set; }
+        DbSet<Exercise> Exercises { get; set; }
+        DbSet<Expertise> Expertises { get; set; }
+        DbSet<ExpertiseTeacher> ExpertiseTeachers { get; set; }
+        DbSet<ProvinceCity> ProvinceCities { get; set; }
+        DbSet<Receipt> Receipts { get; set; }
+        DbSet<ResultExam> ResultExams { get; set; }
+        DbSet<Student> Students { get; set; }
+        DbSet<StudentAttendance> StudentAttendances { get; set; }
+        DbSet<StudentClass> StudentClasses { get; set; }
+        DbSet<StudentCourse> StudentCourses { get; set; }
+        DbSet<StudentExercise> StudentExercises { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        DbSet<TeacherAttendance> TeacherAttendances { get; set; }
+>>>>>>> 65155000219893a4410c871adbf3af3b6aa424ed
         public DbSet<TeacherClass> TeacherClasses { get; set; }
         public DbSet<TeacherCourse> TeacherCourses { get; set; }
 

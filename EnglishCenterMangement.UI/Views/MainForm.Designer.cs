@@ -1,25 +1,11 @@
-﻿namespace EnglishCenterManagement.UI.Views
+﻿using System.ComponentModel;
+
+namespace EnglishCenterManagement.UI.Views
 {
-    partial class MainForm
+    partial class MainForm : Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
+        private Container components;
+        private Label label1;
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,32 +14,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            SuspendLayout();
+            // Bạn có thể đã có dòng này, nếu chưa thì thêm vào
+            this.components = new System.ComponentModel.Container();
+
+            // Khởi tạo label1 (vì bạn đã khai báo nó)
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(195, 87);
-            label1.Name = "label1";
-            label1.Size = new Size(61, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Hello";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(50, 50); // Vị trí ví dụ
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Hello World!";
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Name = "MainForm";
-            Text = "MainForm";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1); // Thêm label vào form
+            this.Name = "MainForm";
+            this.Text = "MainForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
-        private Label label1;
     }
 }
