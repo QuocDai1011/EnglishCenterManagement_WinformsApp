@@ -57,9 +57,17 @@ namespace EnglishCenterManagement.UI.Views.StudentDai
 
         }
 
+        private void LoadUC(UserControl uc)
+        {
+            this.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
+
+        }
+
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            
+            LoadUC(new UC_ClassDetail(_course, _class));
         }
     }
 }
