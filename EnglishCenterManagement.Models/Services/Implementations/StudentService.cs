@@ -96,18 +96,37 @@ namespace EnglishCenterManagement.Models.Services.Implementations
         }
 
 
-        public void Update(Student student)
+        public string Update(Student student)
         {
-            _studentRepository.Update(student);
+            if (student == null)
+                return "Dữ liệu sinh viên không hợp lệ!";
+
+            string validationMessage = CheckStudent(student);
+            if (!string.IsNullOrEmpty(validationMessage))
+                return validationMessage;
+
+            // Gọi repository
+            string dbResult = _studentRepository.Update(student);
+
+            if (!string.IsNullOrEmpty(dbResult))
+            {
+                // Có lỗi DB → xử lý để trả message rõ ràng cho UI
+                if (dbResult.Contains("IX_students_user_name"))
+                    return "Tên đăng nhập đã tồn tại, vui lòng chọn tên khác!";
+
+                if (dbResult.Contains("IX_students_email"))
+                    return "Email đã tồn tại trong hệ thống!";
+
+                return "Lỗi khi lưu dữ liệu vào hệ thống: " + dbResult;
+            }
+
+            return null; // null = không lỗi
         }
 
         public void Delete(int id)
         {
             _studentRepository.Delete(id);
         }
-
-        
-
 
     }
 }

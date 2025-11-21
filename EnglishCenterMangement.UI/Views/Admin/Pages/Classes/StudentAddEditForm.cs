@@ -15,36 +15,31 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
 {
     public partial class StudentAddEditForm : Form
     {
+        // ==================== FIELDS ====================
         private readonly ServiceHub _service;
         private readonly Student _student;
-        private readonly Class _classes;
-        private List<Course> _courses;
         private bool _isEditMode = false;
 
-        public StudentAddEditForm(ServiceHub service, Class classes, Student student = null)
+        // ==================== CONSTRUCTOR ====================
+        public StudentAddEditForm(ServiceHub service, Student student = null)
         {
             InitializeComponent();
-            _service = service;
-            _classes = classes;
-            _student = student;
-            _isEditMode = student != null;
-
             InitializeForm();
+
+            _service = service;
+            _student = student;                // gán Student đúng kiểu
+            _isEditMode = student != null;     // kiểm tra chế độ edit hay add
+
+            if (_isEditMode)
+                LoadStudentData();
         }
 
+        // ==================== FORM INITIALIZATION ====================
         private void InitializeForm()
         {
             try
             {
-                LoadCourses();
                 SetupEventHandlers();
-
-                if (_isEditMode)
-                    LoadStudentData();
-                else
-                    SetDefaultValues();
-
-                UpdateDiscountAccessibility();
             }
             catch (Exception ex)
             {
@@ -53,45 +48,15 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
             }
         }
 
-        private void LoadCourses()
-        {
-            _courses = _service.CourseService.GetAllCourses().ToList();
-
-            if (_courses == null || !_courses.Any())
-            {
-                MessageHelper.ShowWarning("Không có khóa học nào trong hệ thống!");
-                this.Close();
-                return;
-            }
-
-            cboCourse.Items.Clear();
-            foreach (Course c in _courses)
-            {
-                cboCourse.Items.Add(c.CourseName);
-            }
-        }
-
         private void SetupEventHandlers()
         {
-            cboDiscountType.SelectedIndexChanged += (s, e) => UpdateDiscountAccessibility();
             btnSave.Click += BtnSave_Click;
             btnCancel.Click += BtnCancel_Click;
         }
 
-        private void SetDefaultValues()
-        {
-            lblTitle.Text = $"Thêm sinh viên mới - Lớp {_classes.ClassName}";
-            dtpDateOfBirth.Value = DateTime.Now.AddYears(-18);
-
-            UIHelper.ResetComboBoxes(cboCourse, cboDiscountType, cboGender);
-        }
-
+        // ==================== LOAD DATA ====================
         private void LoadStudentData()
         {
-            if (_student == null) return;
-
-            lblTitle.Text = $"Cập nhật sinh viên - Lớp {_classes.ClassName}";
-
             txtUserName.Text = _student.UserName;
             txtPassword.Text = _student.Password;
             txtFullName.Text = _student.FullName;
@@ -100,74 +65,86 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
             txtPhoneParents.Text = _student.PhoneNumberOfParents;
             txtAddress.Text = _student.Address;
 
-            cboGender.SelectedIndex = _student.Gender ? 0 : 1;
-            chkIsActive.Checked = _student.IsActive;
+            cboGender.SelectedItem = _student.Gender ? "Nam" : "Nữ";
 
-            if (_student.DateOfBirth.HasValue)
-                dtpDateOfBirth.Value = _student.DateOfBirth.Value.ToDateTime(TimeOnly.MinValue);
+            if (_student.DateOfBirth != null)
+                dtpDateOfBirth.Text = _student.DateOfBirth.ToString();
+
+            chkIsActive.Checked = _student.IsActive;
         }
 
-        private void UpdateDiscountAccessibility()
+        // ==================== BUTTON EVENTS ====================
+        private void BtnCancel_Click(object? sender, EventArgs e)
         {
-            string value = cboDiscountType.SelectedItem?.ToString();
-            bool enabled = value == "FixedAmount" || value == "Percentage";
-
-            numDiscountValue.Enabled = enabled;
-            lblDiscountValue.Enabled = enabled;
-
-            if (!enabled)
-                numDiscountValue.Value = 0;
+            this.Close();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (!ValidateAndConfirm()) return;
-
             try
             {
-                UIHelper.SetControlsBusy(new Control[] { btnSave, btnCancel }, true);
-                this.Cursor = Cursors.WaitCursor;
+                // Validate form
+                if (!ValidateAndConfirm())
+                    return;
 
+                // Build Student object từ form
                 Student student = BuildStudentFromForm();
-                string result = SaveStudent(student);
 
-                if (result != null)
+                if (_isEditMode)
+                    UpdateStudent(student);
+                else
+                    AddStudent(student);
+            }
+            catch (Exception ex)
+            {
+                MessageHelper.ShowError($"Lỗi không mong muốn:\n{ex.Message}\n\nChi tiết: {ex.InnerException?.Message}");
+            }
+        }
+
+        // ==================== CRUD METHODS ====================
+        private void AddStudent(Student student)
+        {
+            try
+            {
+                string result = _service.StudentService.Create(student);
+                if (!string.IsNullOrEmpty(result))
                 {
-                    MessageHelper.ShowError(result);
+                    MessageHelper.ShowError($"Lỗi khi thêm sinh viên:\n{result}");
                     return;
                 }
 
-                if (!_isEditMode)
-                {
-                    string courseResult = SaveStudentCourse(student);
-                    if (courseResult != null)
-                    {
-                        MessageHelper.ShowWarning(
-                            $"Sinh viên đã được tạo nhưng có lỗi khi đăng ký khóa học:\n{courseResult}"
-                        );
-                    }
-                }
-
-                MessageHelper.ShowSuccess(
-                    _isEditMode
-                        ? "Cập nhật thông tin sinh viên thành công!"
-                        : $"Thêm sinh viên vào lớp {_classes.ClassName} thành công!"
-                );
-
+                MessageHelper.ShowInfo("Thêm sinh viên thành công!");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageHelper.ShowError($"Lỗi không mong muốn:\n{ex.Message}");
-            }
-            finally
-            {
-                UIHelper.SetControlsBusy(new Control[] { btnSave, btnCancel }, false);
-                this.Cursor = Cursors.Default;
+                MessageHelper.ShowError($"Lỗi khi thêm sinh viên:\n{ex.Message}");
             }
         }
 
+        private void UpdateStudent(Student student)
+        {
+            try
+            {
+                string result = _service.StudentService.Update(student);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    MessageHelper.ShowError($"Lỗi khi cập nhật sinh viên:\n{result}");
+                    return;
+                }
+
+                MessageHelper.ShowInfo("Cập nhật sinh viên thành công!");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageHelper.ShowError($"Lỗi khi cập nhật sinh viên:\n{ex.Message}");
+            }
+        }
+
+        // ==================== VALIDATION ====================
         private bool ValidateAndConfirm()
         {
             string errors;
@@ -180,25 +157,16 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
                 txtPhoneParents.Text.Trim(),
                 dtpDateOfBirth.Value,
                 cboGender.SelectedIndex,
-                cboCourse.SelectedIndex,
-                cboDiscountType.SelectedIndex,
-                numDiscountValue.Value,
                 out errors
             );
 
             if (!isValid)
-            {
                 MessageHelper.ShowValidationErrors(errors);
-                return false;
-            }
 
-            string confirmMsg = _isEditMode
-                ? "Bạn có chắc chắn muốn cập nhật thông tin sinh viên này?"
-                : $"Bạn có chắc chắn muốn thêm sinh viên vào lớp {_classes.ClassName}?";
-
-            return MessageHelper.ShowConfirmation(confirmMsg);
+            return isValid;
         }
 
+        // ==================== BUILD STUDENT OBJECT ====================
         private Student BuildStudentFromForm()
         {
             DateTime now = DateTime.Now;
@@ -235,49 +203,6 @@ namespace EnglishCenterManagement.UI.Views.Admin.Pages.Classes
                 UpdateAt = now,
                 IsActive = chkIsActive.Checked
             };
-        }
-
-        private string SaveStudent(Student student)
-        {
-            //return _isEditMode
-            //    ? _service.StudentService.Update(student)
-            //    : _service.StudentService.Create(student);
-            return "";
-        }
-
-        private string SaveStudentCourse(Student student)
-        {
-            try
-            {
-                var selectedCourse = _courses[cboCourse.SelectedIndex];
-
-                var studentCourse = new StudentCourse
-                {
-                    StudentId = student.StudentId,
-                    CourseId = selectedCourse.CourseId,
-                    DiscountType = cboDiscountType.SelectedItem?.ToString() ?? "None",
-                    DicountValue = numDiscountValue.Value,
-                    CreateAt = DateTime.Now,
-                    UpdateAt = DateTime.Now
-                };
-
-                //return _service.StudentCourseService.Create(studentCourse);
-                return "";
-            }
-            catch (Exception ex)
-            {
-                return $"Lỗi khi đăng ký khóa học: {ex.Message}";
-            }
-        }
-
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            if (MessageHelper.ShowConfirmation(
-                "Bạn có chắc chắn muốn hủy?\nMọi thay đổi sẽ không được lưu!"))
-            {
-                this.DialogResult = DialogResult.Cancel;
-                this.Close();
-            }
         }
     }
 }

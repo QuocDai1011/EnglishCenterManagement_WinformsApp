@@ -26,6 +26,7 @@ namespace EnglishCenterMangement.UI.Views.Admin.Utils
                 "manage" => _provider.GetRequiredService<ManagePagePanel>(),
                 "dashboard" => _provider.GetRequiredService<DashboardPagePanel>(),
                 "classes" => _provider.GetRequiredService<ClassesPagePanel>(),
+                "students" => _provider.GetRequiredService<StudentsPagePanel>(),
                 //"calendar" => _provider.GetRequiredService<CalendarPagePanel>(),
                 //"invoices" => _provider.GetRequiredService<InvoicesPagePanel>(),
                 _ => _provider.GetRequiredService<DashboardPagePanel>()

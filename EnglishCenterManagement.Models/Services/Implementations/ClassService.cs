@@ -28,9 +28,14 @@ namespace EnglishCenterManagement.Models.Services.Implementations
             _classRepository.Create(entity);
         }
 
-        public void UpdateClass(Class entity)
+        public string UpdateClass(Class entity)
         {
+            if (entity == null) {
+                return null;
+            }
+
             _classRepository.Update(entity);
+            return "Cập nhật lớp học thành công";
         }
 
         public void DeleteClass(int id)

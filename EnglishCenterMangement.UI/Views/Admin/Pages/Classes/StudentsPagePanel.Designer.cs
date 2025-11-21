@@ -1,6 +1,7 @@
-﻿namespace EnglishCenterMangement.UI.Views.Admin.Pages.Classes
+﻿
+namespace EnglishCenterMangement.UI.Views.Admin.Pages.Classes
 {
-    partial class StudentOfClass
+    partial class StudentsPagePanel
     {
         /// <summary> 
         /// Required designer variable.
@@ -41,10 +42,9 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panelHeader = new Panel();
             lblTitle = new Label();
             lblTotalStudents = new Label();
@@ -56,17 +56,25 @@
             btnRefresh = new Button();
             btnExport = new Button();
             dgvStudents = new DataGridView();
-            colCourse = new DataGridViewTextBoxColumn();
+            colId = new DataGridViewTextBoxColumn();
             colFullName = new DataGridViewTextBoxColumn();
+            colGender = new DataGridViewTextBoxColumn();
             colEmail = new DataGridViewTextBoxColumn();
-            colPhone = new DataGridViewTextBoxColumn();
             colDateOfBirth = new DataGridViewTextBoxColumn();
-            Gender = new DataGridViewTextBoxColumn();
-            phoneNumberOfParent = new DataGridViewTextBoxColumn();
+            colPhoneNumber = new DataGridViewTextBoxColumn();
+            colPhoneNumberOfParent = new DataGridViewTextBoxColumn();
+            contentPanel.SuspendLayout();
             panelHeader.SuspendLayout();
             panelActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvStudents).BeginInit();
             SuspendLayout();
+            // 
+            // contentPanel
+            // 
+            contentPanel.Controls.Add(dgvStudents);
+            contentPanel.Controls.Add(panelActions);
+            contentPanel.Location = new Point(0, 80);
+            contentPanel.Size = new Size(1232, 657);
             // 
             // panelHeader
             // 
@@ -77,7 +85,7 @@
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Padding = new Padding(20, 15, 20, 15);
-            panelHeader.Size = new Size(1580, 80);
+            panelHeader.Size = new Size(1232, 80);
             panelHeader.TabIndex = 0;
             // 
             // lblTitle
@@ -87,16 +95,16 @@
             lblTitle.ForeColor = Color.FromArgb(33, 33, 33);
             lblTitle.Location = new Point(20, 15);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(448, 41);
+            lblTitle.Size = new Size(294, 41);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Danh sách sinh viên - [Tên lớp]";
+            lblTitle.Text = "Danh sách sinh viên";
             // 
             // lblTotalStudents
             // 
             lblTotalStudents.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblTotalStudents.Font = new Font("Segoe UI", 12F);
             lblTotalStudents.ForeColor = Color.FromArgb(117, 117, 117);
-            lblTotalStudents.Location = new Point(1261, 25);
+            lblTotalStudents.Location = new Point(913, 25);
             lblTotalStudents.Name = "lblTotalStudents";
             lblTotalStudents.Size = new Size(299, 25);
             lblTotalStudents.TabIndex = 1;
@@ -112,11 +120,10 @@
             panelActions.Controls.Add(btnDelete);
             panelActions.Controls.Add(btnRefresh);
             panelActions.Controls.Add(btnExport);
-            panelActions.Dock = DockStyle.Top;
-            panelActions.Location = new Point(0, 80);
+            panelActions.Location = new Point(0, 6);
             panelActions.Name = "panelActions";
             panelActions.Padding = new Padding(20, 15, 20, 15);
-            panelActions.Size = new Size(1580, 70);
+            panelActions.Size = new Size(1570, 77);
             panelActions.TabIndex = 1;
             // 
             // searchBox
@@ -142,13 +149,12 @@
             btnAdd.TabIndex = 1;
             btnAdd.Text = "➕ Thêm mới";
             btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += BtnAdd_Click;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnEdit
             // 
             btnEdit.BackColor = Color.FromArgb(25, 118, 210);
             btnEdit.Cursor = Cursors.Hand;
-            btnEdit.Enabled = false;
             btnEdit.FlatAppearance.BorderSize = 0;
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -159,13 +165,12 @@
             btnEdit.TabIndex = 2;
             btnEdit.Text = "✏️ Sửa";
             btnEdit.UseVisualStyleBackColor = false;
-            btnEdit.Click += BtnEdit_Click;
+            btnEdit.Click += btnEdit_click;
             // 
             // btnDelete
             // 
             btnDelete.BackColor = Color.FromArgb(211, 47, 47);
             btnDelete.Cursor = Cursors.Hand;
-            btnDelete.Enabled = false;
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -176,7 +181,7 @@
             btnDelete.TabIndex = 3;
             btnDelete.Text = "🗑️ Xóa";
             btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.Click += BtnDelete_Click;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnRefresh
             // 
@@ -192,7 +197,7 @@
             btnRefresh.TabIndex = 4;
             btnRefresh.Text = "🔄 Làm mới";
             btnRefresh.UseVisualStyleBackColor = false;
-            btnRefresh.Click += BtnRefresh_Click;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnExport
             // 
@@ -203,25 +208,23 @@
             btnExport.FlatStyle = FlatStyle.Flat;
             btnExport.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnExport.ForeColor = Color.White;
-            btnExport.Location = new Point(1420, 15);
+            btnExport.Location = new Point(1410, 15);
             btnExport.Name = "btnExport";
             btnExport.Size = new Size(140, 38);
             btnExport.TabIndex = 5;
             btnExport.Text = "📥 Xuất Excel";
             btnExport.UseVisualStyleBackColor = false;
-            btnExport.Click += BtnExport_Click;
             // 
             // dgvStudents
             // 
             dgvStudents.AllowUserToAddRows = false;
             dgvStudents.AllowUserToDeleteRows = false;
             dgvStudents.AllowUserToResizeRows = false;
-            dgvStudents.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStudents.BackgroundColor = Color.White;
             dgvStudents.BorderStyle = BorderStyle.None;
             dgvStudents.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(63, 81, 181);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = Color.White;
@@ -232,115 +235,106 @@
             dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvStudents.ColumnHeadersHeight = 45;
             dgvStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvStudents.Columns.AddRange(new DataGridViewColumn[] { colCourse, colFullName, colEmail, colPhone, colDateOfBirth, Gender, phoneNumberOfParent });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.75F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new Padding(5, 3, 5, 3);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(232, 234, 246);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(33, 33, 33);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvStudents.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvStudents.Columns.AddRange(new DataGridViewColumn[] { colId, colFullName, colGender, colEmail, colDateOfBirth, colPhoneNumber, colPhoneNumberOfParent });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new Padding(5, 3, 5, 3);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(232, 234, 246);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(33, 33, 33);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvStudents.DefaultCellStyle = dataGridViewCellStyle3;
             dgvStudents.EnableHeadersVisualStyles = false;
             dgvStudents.GridColor = Color.FromArgb(224, 224, 224);
-            dgvStudents.Location = new Point(20, 165);
+            dgvStudents.Location = new Point(5, 89);
             dgvStudents.MultiSelect = false;
             dgvStudents.Name = "dgvStudents";
             dgvStudents.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvStudents.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvStudents.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvStudents.RowHeadersVisible = false;
             dgvStudents.RowHeadersWidth = 51;
             dgvStudents.RowTemplate.Height = 40;
             dgvStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvStudents.Size = new Size(1540, 315);
+            dgvStudents.Size = new Size(1570, 577);
             dgvStudents.TabIndex = 2;
             // 
-            // colCourse
+            // colId
             // 
-            colCourse.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            colCourse.DataPropertyName = "colCourse";
-            colCourse.FillWeight = 26.6317978F;
-            colCourse.HeaderText = "Khóa học";
-            colCourse.MinimumWidth = 6;
-            colCourse.Name = "colCourse";
-            colCourse.ReadOnly = true;
-            colCourse.Width = 169;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            colId.DefaultCellStyle = dataGridViewCellStyle2;
+            colId.FillWeight = 66.87898F;
+            colId.HeaderText = "Mã sinh viên";
+            colId.MinimumWidth = 6;
+            colId.Name = "colId";
+            colId.ReadOnly = true;
             // 
             // colFullName
             // 
-            colFullName.DataPropertyName = "FullName";
-            colFullName.FillWeight = 40F;
+            colFullName.FillWeight = 105.520172F;
             colFullName.HeaderText = "Họ và tên";
             colFullName.MinimumWidth = 6;
             colFullName.Name = "colFullName";
             colFullName.ReadOnly = true;
             // 
+            // colGender
+            // 
+            colGender.FillWeight = 105.520172F;
+            colGender.HeaderText = "Giới tính";
+            colGender.MinimumWidth = 6;
+            colGender.Name = "colGender";
+            colGender.ReadOnly = true;
+            // 
             // colEmail
             // 
-            colEmail.DataPropertyName = "Email";
-            colEmail.FillWeight = 40F;
+            colEmail.FillWeight = 105.520172F;
             colEmail.HeaderText = "Email";
             colEmail.MinimumWidth = 6;
             colEmail.Name = "colEmail";
             colEmail.ReadOnly = true;
             // 
-            // colPhone
-            // 
-            colPhone.DataPropertyName = "Phone";
-            colPhone.FillWeight = 33.2897453F;
-            colPhone.HeaderText = "Số điện thoại";
-            colPhone.MinimumWidth = 6;
-            colPhone.Name = "colPhone";
-            colPhone.ReadOnly = true;
-            // 
             // colDateOfBirth
             // 
-            colDateOfBirth.DataPropertyName = "DateOfBirth";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            colDateOfBirth.DefaultCellStyle = dataGridViewCellStyle2;
-            colDateOfBirth.FillWeight = 33.2897453F;
+            colDateOfBirth.FillWeight = 105.520172F;
             colDateOfBirth.HeaderText = "Ngày sinh";
             colDateOfBirth.MinimumWidth = 6;
             colDateOfBirth.Name = "colDateOfBirth";
             colDateOfBirth.ReadOnly = true;
             // 
-            // Gender
+            // colPhoneNumber
             // 
-            Gender.FillWeight = 33.2897453F;
-            Gender.HeaderText = "Giới tính";
-            Gender.MinimumWidth = 6;
-            Gender.Name = "Gender";
-            Gender.ReadOnly = true;
+            colPhoneNumber.FillWeight = 105.520172F;
+            colPhoneNumber.HeaderText = "Số điện thoại";
+            colPhoneNumber.MinimumWidth = 6;
+            colPhoneNumber.Name = "colPhoneNumber";
+            colPhoneNumber.ReadOnly = true;
             // 
-            // phoneNumberOfParent
+            // colPhoneNumberOfParent
             // 
-            phoneNumberOfParent.DataPropertyName = "phoneNumberOfParent";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            phoneNumberOfParent.DefaultCellStyle = dataGridViewCellStyle3;
-            phoneNumberOfParent.FillWeight = 36.61872F;
-            phoneNumberOfParent.HeaderText = "Số điện thoại phụ huynh";
-            phoneNumberOfParent.MinimumWidth = 6;
-            phoneNumberOfParent.Name = "phoneNumberOfParent";
-            phoneNumberOfParent.ReadOnly = true;
+            colPhoneNumberOfParent.FillWeight = 105.520172F;
+            colPhoneNumberOfParent.HeaderText = "Số điện thoại phụ huynh";
+            colPhoneNumberOfParent.MinimumWidth = 6;
+            colPhoneNumberOfParent.Name = "colPhoneNumberOfParent";
+            colPhoneNumberOfParent.ReadOnly = true;
             // 
-            // StudentOfClass
+            // StudentsPagePanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(dgvStudents);
-            Controls.Add(panelActions);
             Controls.Add(panelHeader);
-            Name = "StudentOfClass";
-            Size = new Size(1580, 500);
+            Name = "StudentsPagePanel";
+            Size = new Size(1232, 737);
+            Controls.SetChildIndex(panelHeader, 0);
+            Controls.SetChildIndex(contentPanel, 0);
+            contentPanel.ResumeLayout(false);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelActions.ResumeLayout(false);
@@ -351,12 +345,12 @@
 
         #endregion
 
-        private DataGridViewTextBoxColumn colCourse;
+        private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colFullName;
+        private DataGridViewTextBoxColumn colGender;
         private DataGridViewTextBoxColumn colEmail;
-        private DataGridViewTextBoxColumn colPhone;
         private DataGridViewTextBoxColumn colDateOfBirth;
-        private DataGridViewTextBoxColumn Gender;
-        private DataGridViewTextBoxColumn phoneNumberOfParent;
+        private DataGridViewTextBoxColumn colPhoneNumber;
+        private DataGridViewTextBoxColumn colPhoneNumberOfParent;
     }
 }

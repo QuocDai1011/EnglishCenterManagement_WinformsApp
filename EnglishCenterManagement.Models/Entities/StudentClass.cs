@@ -8,6 +8,12 @@ namespace EnglishCenterManagement.Models.Entities
 {
     public class StudentClass
     {
+        public StudentClass(int studentId, int classId)
+        {
+            StudentId = studentId;
+            ClassId = classId;
+        }
+
         public int StudentId { get; set; }
         public int ClassId { get; set; }
 

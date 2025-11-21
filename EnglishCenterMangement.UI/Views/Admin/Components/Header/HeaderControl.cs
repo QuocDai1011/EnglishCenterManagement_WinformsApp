@@ -259,11 +259,9 @@ namespace EnglishCenterMangement.UI.Views.Admin.Components.Header
                 itemBtn.FlatAppearance.BorderSize = 0;
                 UIHelper.AddHoverEffect(itemBtn, Color.FromArgb(240, 242, 245), Color.White);
 
-                itemBtn.Click += (s, e) =>
-                {
-                    OnMenuItemClick?.Invoke(this, $"{category}:{items[index]}");
-                    HideDropdown();
-                };
+                itemBtn.Tag = new { Category = category, Item = items[index] };
+                itemBtn.Click += ItemBtn_Click;
+
 
                 dropdownPanel.Controls.Add(itemBtn);
             }
@@ -284,6 +282,19 @@ namespace EnglishCenterMangement.UI.Views.Admin.Components.Header
             // Bắt sự kiện click ngoài
             parentForm.Click += ParentForm_Click;
             this.Click += HeaderControl_Click;
+        }
+        private void ItemBtn_Click(object sender, EventArgs e)
+        {
+            var btn = sender as Button;
+            dynamic tag = btn.Tag;
+
+            string category = tag.Category;
+            string item = tag.Item;
+
+            // Gửi sự kiện ra ngoài
+            OnMenuItemClick?.Invoke(this, $"{category}:{item}");
+
+            HideDropdown();
         }
 
         private void StartFadeEffect()

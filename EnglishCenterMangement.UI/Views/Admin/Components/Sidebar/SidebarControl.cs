@@ -1,6 +1,7 @@
 ﻿using EnglishCenterMangement.UI.Views.Admin.Utils;
 using System;
 using System.Drawing;
+using System.Security.Permissions;
 using System.Windows.Forms;
 
 namespace EnglishCenterMangement.UI.Views.Admin.Components.Sidebar
@@ -15,6 +16,7 @@ namespace EnglishCenterMangement.UI.Views.Admin.Components.Sidebar
             ("manage_icon", "Quản Lý", "manage"),
             ("dashboard_icon", "Dashboard", "dashboard"),
             ("classes_icon", "Lớp học của tôi", "classes"),
+            ("students_icon", "Danh sách sinh viên", "students"),
             ("", "Lối tắt của bạn", "shortcuts-header"),
             ("calendar_icon", "Lịch cá nhân", "calendar"),
             ("invoice_icon", "Hóa đơn", "invoices"),
@@ -120,6 +122,9 @@ namespace EnglishCenterMangement.UI.Views.Admin.Components.Sidebar
                         break;
                     case "invoices":
                         iconPicture.Image = Properties.Resources.Receipt;
+                        break;
+                    case "students":
+                        iconPicture.Image = Properties.Resources.nhóm;
                         break;
                     default:
                         // Tạo icon placeholder nếu không có

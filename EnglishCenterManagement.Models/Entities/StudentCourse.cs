@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace EnglishCenterManagement.Models.Entities
         public decimal DicountValue { get; set; }
         public DateTime? CreateAt { get; set; }
         public DateTime? UpdateAt { get; set; }
-       
+
 
         // -------- FOREIGN KEY ----------
 

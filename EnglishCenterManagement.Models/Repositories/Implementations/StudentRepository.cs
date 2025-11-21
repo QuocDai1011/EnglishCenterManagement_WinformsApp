@@ -67,10 +67,32 @@ namespace EnglishCenterManagement.Models.Repositories.Implementations
             return _context.Students.Find(id);
         }
 
-        public void Update(Student entity)
+        public Student getStudentByUserName(string username)
         {
-            _context.Students.Update(entity);
-            _context.SaveChanges();
+            throw new NotImplementedException();
+        }
+
+        public string Update(Student entity)
+        {
+            try
+            {
+                _context.Students.Update(entity);
+                _context.SaveChanges();
+                return null; // null nghĩa là không lỗi
+            }
+            catch (DbUpdateException ex)
+            {
+                // Lấy lỗi SQL gốc
+                var inner = ex.InnerException?.Message ?? ex.Message;
+
+                // Trả lỗi lên Service
+                return inner;
+            }
+            catch (Exception ex)
+            {
+                // Các lỗi khác
+                return ex.Message;
+            }
         }
     }
 }
