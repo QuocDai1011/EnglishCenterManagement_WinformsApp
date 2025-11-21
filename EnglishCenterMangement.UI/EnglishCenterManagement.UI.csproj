@@ -17,10 +17,7 @@
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Teacher1\" />
     <Folder Include="Views\SystemAcess\" />
-<<<<<<< HEAD
     <Folder Include="Views\Teacher\" />
-=======
->>>>>>> 65155000219893a4410c871adbf3af3b6aa424ed
   </ItemGroup>
 
   <ItemGroup>

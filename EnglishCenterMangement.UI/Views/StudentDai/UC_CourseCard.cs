@@ -67,7 +67,6 @@ namespace EnglishCenterManagement.UI.Views.StudentDai
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            LoadUC(new UC_ClassDetail(_course, _class));
         }
     }
 }

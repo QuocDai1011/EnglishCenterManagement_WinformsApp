@@ -66,12 +66,7 @@ namespace EnglishCenterManagement.UI
 
             // Khởi chạy WinForms
             ApplicationConfiguration.Initialize();
-<<<<<<< HEAD
             Application.Run(new StudentFrom());
-=======
-            var homeForm = provider.GetRequiredService<teacherForm>();
-            Application.Run(homeForm);
->>>>>>> 65155000219893a4410c871adbf3af3b6aa424ed
         }
     }
 }

@@ -153,7 +153,7 @@ namespace EnglishCenterManagement.UI.Views
             List<SidebarItem> sidebarItems = new List<SidebarItem>()
             {
                 new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\user.png"), Text = "Quốc Đại", OnClick = () => renderDetailStudent(15) },
-                new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\store.png"), Text = "Marketplace", OnClick = () => {} },
+                new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\store.png"), Text = "Marketplace", OnClick = () => renderCourse() },
                 new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\classroom.png"), Text = "Lớp học của tôi", OnClick = () => renderClassStudent(1) },
                 new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\calendar.png"), Text = "Lịch cá nhân", OnClick = () => { } },
                 new SidebarItem() {Icon = Image.FromFile(@"D:\Code\EnglishCenterManagement_WinformsApp\EnglishCenterMangement.UI\Views\Student\assets\details.png"), Text = "Bài tập về nhà", OnClick = () => { } },
@@ -226,7 +226,35 @@ namespace EnglishCenterManagement.UI.Views
 
             panelControl.Controls.Add(flowPanel);
         }
+        private void renderCourse()
+        {
+            panelControl.Controls.Clear();
 
+            // Tạo FlowLayoutPanel bên trong panelControl
+            FlowLayoutPanel flowPanel = new FlowLayoutPanel();
+            flowPanel.Dock = DockStyle.Fill;
+            flowPanel.AutoScroll = true;
+            flowPanel.WrapContents = true; // khi hết hàng thì xuống hàng mới
+            flowPanel.FlowDirection = FlowDirection.LeftToRight;
+            flowPanel.Padding = new Padding(10);
+            flowPanel.AutoSize = false;
+
+            var controller = new CourseController();
+            var courses = controller.GetAll(); // List<Class>
+
+            foreach (var c in courses)
+            {
+                var item = new UC_Course();
+                item.LoadCorse(c);
+                item.Width = 300;  // chiều rộng item
+                item.Height = 400; // chiều cao item
+                item.Margin = new Padding(10);
+
+                flowPanel.Controls.Add(item);
+            }
+
+            panelControl.Controls.Add(flowPanel);
+        }
 
     }
 }

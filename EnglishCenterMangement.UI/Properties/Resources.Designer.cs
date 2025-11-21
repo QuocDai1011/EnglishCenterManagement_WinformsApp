@@ -59,8 +59,6 @@ namespace EnglishCenterManagement.UI.Properties {
                 resourceCulture = value;
             }
         }
-<<<<<<< HEAD
-=======
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -151,6 +149,5 @@ namespace EnglishCenterManagement.UI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
->>>>>>> 65155000219893a4410c871adbf3af3b6aa424ed
     }
 }
